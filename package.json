@@ -1,0 +1,42 @@
+{
+  "name": "focus-trap-vue",
+  "version": "0.0.0",
+  "description": "Vue component to trap the focus inside a container",
+  "main": "dist/index.js",
+  "author": {
+    "name": "Eduardo San Martin Morote",
+    "email": "posva13@gmail.com"
+  },
+  "scripts": {
+    "unit": "jest",
+    "test": "npm run lint && npm run unit",
+    "prepublishOnly": "yarn run build"
+  },
+  "files": [
+    "src",
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "focus",
+    "trap",
+    "modal",
+    "component",
+    "block",
+    "lock",
+    "vue"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/posva/lib-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/posva/lib-boilerplate/issues"
+  },
+  "homepage": "https://github.com/posva/lib-boilerplate#readme"
+}
