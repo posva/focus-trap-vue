@@ -22,8 +22,15 @@ interface FocusTrapComponent
 
 // @ts-ignore
 const FocusTrap: FocusTrapComponent = {
+  // @ts-ignore
+  props: {
+    active: {
+      type: Boolean,
+      default: true,
+    },
+  },
+
   mounted() {
-    console.log(this.$el)
     this.trap = createFocusTrap(
       // @ts-ignore
       this.$el,
