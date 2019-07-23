@@ -4,6 +4,11 @@ import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
 
 interface FocusTrapComponentProps {
   active: boolean
+  escapeDeactivates: boolean
+  returnFocusOnDeactivate: boolean
+  allowOutsideClick: boolean
+  initialFocus: string | (() => any)
+  fallbackFocus: string | (() => any)
 }
 
 interface FocusTrapComponentsMethods {}
@@ -18,6 +23,12 @@ interface FocusTrapComponent
       FocusTrapComponentProps
     > {
   trap: FocusTrapI
+  active: FocusTrapComponentProps['active']
+  escapeDeactivates: FocusTrapComponentProps['escapeDeactivates']
+  returnFocusOnDeactivate: FocusTrapComponentProps['returnFocusOnDeactivate']
+  allowOutsideClick: FocusTrapComponentProps['allowOutsideClick']
+  initialFocus: FocusTrapComponentProps['initialFocus']
+  fallbackFocus: FocusTrapComponentProps['fallbackFocus']
 }
 
 // @ts-ignore
@@ -25,28 +36,60 @@ const FocusTrap: FocusTrapComponent = {
   // @ts-ignore
   props: {
     active: {
+      // TODO: could be options for activate
       type: Boolean,
       default: true,
     },
+    escapeDeactivates: {
+      type: Boolean,
+      default: true,
+    },
+    returnFocusOnDeactivate: {
+      type: Boolean,
+      default: true,
+    },
+    allowOutsideClick: {
+      type: Boolean,
+      default: true,
+    },
+    initialFocus: [String, Function],
+    fallbackFocus: [String, Function],
+  },
+
+  model: {
+    event: 'update:active',
+    prop: 'active',
   },
 
   mounted() {
-    this.trap = createFocusTrap(
-      // @ts-ignore
-      this.$el,
-      {
-        escapeDeactivates: false,
-        allowOutsideClick: true,
-        initialFocus: () => this.$el,
-      }
-    )
-    this.trap.activate()
-
     this.$watch(
       'active',
       (active: boolean) => {
-        if (active) this.trap.unpause()
-        else this.trap.pause()
+        if (active) {
+          // has no effect if already activated
+          this.trap = createFocusTrap(
+            // @ts-ignore
+            this.$el,
+            {
+              escapeDeactivates: this.escapeDeactivates,
+              allowOutsideClick: this.allowOutsideClick,
+              returnFocusOnDeactivate: this.returnFocusOnDeactivate,
+              onActivate: () => {
+                this.$emit('update:active', true)
+                this.$emit('activate')
+              },
+              onDeactivate: () => {
+                this.$emit('update:active', false)
+                this.$emit('deactivate')
+              },
+              initialFocus: this.initialFocus || (() => this.$el),
+              fallbackFocus: this.fallbackFocus,
+            }
+          )
+          this.trap.activate()
+        } else {
+          this.trap && this.trap.deactivate()
+        }
       },
       { immediate: true }
     )
@@ -57,13 +100,9 @@ const FocusTrap: FocusTrapComponent = {
   },
 
   render() {
-    console.log('hethi', Object.keys(this.$slots))
-    console.log('hethi', Object.keys(this.$scopedSlots))
     const content = this.$slots.default
-    // TODO: warnings
-    if (!content) throw new Error('needs content')
-    if (!content.length) throw new Error('needs content')
-    if (content.length > 1) throw new Error('only one child')
+    if (!content || !content.length || content.length > 1)
+      throw new Error('FocusTrap requires exactly one child')
 
     return content[0]
   },

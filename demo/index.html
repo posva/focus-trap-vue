@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>focus-trap-vue Demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="A demo of focus-trap-vue" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <!-- <script src="https://unpkg.com/focus-trap-vue"></script> -->
+    <script src="../dist/index.umd.js"></script>
+
+    <div id="app">
+      <h1 tabindex="0">focus-trap demo</h1>
+
+      <p>
+        <span style="font-size:2em;vertical-align:middle;">☜</span>
+        <a
+          href="https://github.com/davidtheclark/focus-trap"
+          style="vertical-align:middle;"
+          >Return to the repository</a
+        >
+      </p>
+
+      <p>
+        In the demos below, you'll be able to tell that a focus trap is active
+        because it will turn pink. You should also be able to tell because it
+        will trap your focus!
+      </p>
+
+      <p>
+        When a trap is active, you can deactivate it by pushing its deactivate
+        button or, if the demo allows, hitting <kbd>Escape</kbd>.
+      </p>
+
+      <h2 id="default-heading">default behavior</h2>
+      <p>
+        <button id="activate-default" @click="demos.basic.isActive = true">
+          activate trap
+        </button>
+      </p>
+
+      <focus-trap v-model="demos.basic.isActive">
+        <div id="default" class="trap" tabindex="-1">
+          <p>
+            Here is a focus trap <a href="#">with</a> <a href="#">some</a>
+            <a href="#">focusable</a> parts.
+          </p>
+          <p>
+            <button
+              id="deactivate-default"
+              @click="demos.basic.isActive = false"
+            >
+              deactivate trap
+            </button>
+          </p>
+        </div>
+      </focus-trap>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
