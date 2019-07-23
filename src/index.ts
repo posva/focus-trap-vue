@@ -1,5 +1,3 @@
-const FocusTrap = {
-  two: 2,
-}
+import FocusTrap from './FocusTrap'
 
 export { FocusTrap }

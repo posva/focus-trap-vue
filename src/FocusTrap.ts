@@ -1,16 +1,27 @@
-import Vue, { VNode } from 'vue'
-import Component from 'vue-class-component'
+import Vue, { ComponentOptions } from 'vue'
+// import Component from 'vue-class-component'
 import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
 
-@Component({
-  props: {
-    active: Boolean,
-  },
-})
-export default class FocusTrap extends Vue {
-  // @ts-ignore
-  trap: FocusTrapI
+interface FocusTrapComponentProps {
+  active: boolean
+}
 
+interface FocusTrapComponentsMethods {}
+
+interface FocusTrapComponent
+  extends Vue,
+    ComponentOptions<
+      never,
+      {},
+      FocusTrapComponentsMethods,
+      {},
+      FocusTrapComponentProps
+    > {
+  trap: FocusTrapI
+}
+
+// @ts-ignore
+const FocusTrap: FocusTrapComponent = {
   mounted() {
     console.log(this.$el)
     this.trap = createFocusTrap(
@@ -26,17 +37,17 @@ export default class FocusTrap extends Vue {
 
     this.$watch(
       'active',
-      (active) => {
+      (active: boolean) => {
         if (active) this.trap.unpause()
         else this.trap.pause()
       },
       { immediate: true }
     )
-  }
+  },
 
   beforeDestroy() {
-    this.trap.deactivate()
-  }
+    this.trap && this.trap.deactivate()
+  },
 
   render() {
     console.log('hethi', Object.keys(this.$slots))
@@ -48,5 +59,7 @@ export default class FocusTrap extends Vue {
     if (content.length > 1) throw new Error('only one child')
 
     return content[0]
-  }
+  },
 }
+
+export default FocusTrap
