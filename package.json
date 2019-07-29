@@ -1,7 +1,7 @@
 {
   "name": "focus-trap-vue",
   "version": "0.0.0",
-  "description": "Vue component to trap the focus inside a container",
+  "description": "Vue component that traps keyboard focus to help a11y",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.browser.esm.js",
@@ -11,6 +11,7 @@
   "sideEffects": false,
   "author": {
     "name": "Eduardo San Martin Morote",
+    "url": "https://esm.dev",
     "email": "posva13@gmail.com"
   },
   "scripts": {
@@ -26,6 +27,8 @@
   "keywords": [
     "focus",
     "trap",
+    "a11y",
+    "accessibility",
     "modal",
     "component",
     "block",
