@@ -22,7 +22,8 @@
     "lint": "echo prettier",
     "pretest": "yarn run lint",
     "cy:run": "cypress run",
-    "test": "start-server-and-test start http-get://localhost:8080 cy:run",
+    "test:e2e": "start-server-and-test start http-get://localhost:8080 cy:run",
+    "test": "yarn run build && yarn run test:e2e",
     "prepublishOnly": "yarn run build"
   },
   "files": [

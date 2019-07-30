@@ -9,3 +9,5 @@ package-lock.json
 .DS_Store
 .rpt2_cache
 demo_dist
+cypress/videos
+demo/original.html
