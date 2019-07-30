@@ -97,12 +97,18 @@ const FocusTrap: FocusTrapComponent = {
 
   beforeDestroy() {
     this.trap && this.trap.deactivate()
+    // @ts-ignore
+    this.trap = null
   },
 
   methods: {
     activate() {
       // @ts-ignore
       this.trap.activate()
+    },
+    deactivate() {
+      // @ts-ignore
+      this.trap.deactivate()
     },
   },
 
