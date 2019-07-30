@@ -20,6 +20,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
+            - ~/.cache/Cypress
           key: dependencies-cache-{{ checksum "yarn.lock" }}
 
       - run: yarn run test
