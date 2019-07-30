@@ -99,6 +99,13 @@ const FocusTrap: FocusTrapComponent = {
     this.trap && this.trap.deactivate()
   },
 
+  methods: {
+    activate() {
+      // @ts-ignore
+      this.trap.activate()
+    },
+  },
+
   render() {
     const content = this.$slots.default
     if (!content || !content.length || content.length > 1)
