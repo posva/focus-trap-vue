@@ -87,6 +87,26 @@ documentation to know what they do.
 - `deactive`: Whenever the trap deactivates (note it can also be deactivated by
   pressing <kbd>Esc</kbd> or clicking outside)
 
+### Methods
+
+`FocusTrap` can be used without `v-model`. In that case, you will use the
+methods and _probably_ need to initialize the trap as _deactivated_, otherwise,
+the focus will start as active:
+
+```html
+<button @click="() => $refs.focusTrap.activate()">Show the modal</button>
+
+<focus-trap :active="false" ref="focusTrap">
+  <modal-dialog>
+    <p>Hello there!</p>
+    <button @click="() => $refs.focusTrap.deactivate()">Okay...</button>
+  </modal-dialog>
+</focus-trap>
+```
+
+Note the use of arrow functions, this is necessary because we are accessing
+`$refs` which are unset on first render.
+
 ## Related
 
 - Focus Trap: https://github.com/davidtheclark/focus-trap
