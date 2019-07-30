@@ -12,8 +12,8 @@ jobs:
 
       - restore_cache:
           keys:
-            - dependencies-cache-{{ checksum "yarn.lock" }}
-            - dependencies-cache-
+            - deps-cypress-cache-{{ checksum "yarn.lock" }}
+            - deps-cypress-cache-
 
       - run: yarn install
 
@@ -21,6 +21,6 @@ jobs:
           paths:
             - node_modules
             - ~/.cache/Cypress
-          key: dependencies-cache-{{ checksum "yarn.lock" }}
+          key: deps-cypress-cache-{{ checksum "yarn.lock" }}
 
       - run: yarn run test
