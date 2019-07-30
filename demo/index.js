@@ -1,13 +1,26 @@
-var vm = new Vue({
+import Vue from "vue"
+import { FocusTrap } from "../src"
+
+Vue.config.devtools = true
+
+window.vm = new Vue({
   el: "#app",
 
-  data: {
-    demos: {
-      basic: {
-        isActive: false
+  data: function() {
+    return {
+      demos: {
+        basic: {
+          isActive: false
+        },
+        iene: {
+          initialFocus: function() {
+            return this.$refs.ieneInput
+          }.bind(this),
+          isActive: false
+        }
       }
     }
   },
 
-  components: { FocusTrap: FocusTrapVue.FocusTrap }
+  components: { FocusTrap: FocusTrap }
 })
