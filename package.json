@@ -1,6 +1,6 @@
 {
   "name": "focus-trap-vue",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vue component to trap the focus within a DOM element",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
