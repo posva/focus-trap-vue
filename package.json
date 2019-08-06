@@ -65,12 +65,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/posva/lib-boilerplate.git"
+    "url": "git+https://github.com/posva/focus-trap-vue.git"
   },
   "bugs": {
-    "url": "https://github.com/posva/lib-boilerplate/issues"
+    "url": "https://github.com/posva/focus-trap-vue/issues"
   },
-  "homepage": "https://github.com/posva/lib-boilerplate#readme",
+  "homepage": "https://github.com/posva/focus-trap-vue#readme",
   "peerDependencies": {
     "focus-trap": "^5.0.2"
   }
