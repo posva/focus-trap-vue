@@ -72,7 +72,7 @@ const FocusTrap: FocusTrapComponent = {
             this.$el,
             {
               escapeDeactivates: this.escapeDeactivates,
-              allowOutsideClick: this.allowOutsideClick,
+              allowOutsideClick: () => this.allowOutsideClick,
               returnFocusOnDeactivate: this.returnFocusOnDeactivate,
               onActivate: () => {
                 this.$emit('update:active', true)
