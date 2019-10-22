@@ -4406,9 +4406,9 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     inherits "^2.0.1"
 
 rollup-plugin-alias@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-alias/-/rollup-plugin-alias-2.1.0.tgz#5976ec890a95ce060f190b0d5cc5edcb5b23b916"
-  integrity sha512-fbPLCkulSyNAqMvyvucGxlWCVE/+cqkFsFXN4exCX2Poti/+R0LgkhwOj/zqaytaZ4i1rCSXh+zZkVjgxlUBGg==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-alias/-/rollup-plugin-alias-2.2.0.tgz#5004a2bc542a2eebb45b5a0fff8c6f540439decc"
+  integrity sha512-9ZK410qeFed4gGrHoojBpxLsHF74vPgsheGg9JRW5RbALAxqdvJbd357mSqWBqUrBfRVnZnNUXTZdYLxxQEA5A==
   dependencies:
     slash "^3.0.0"
 
