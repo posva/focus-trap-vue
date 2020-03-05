@@ -73,6 +73,6 @@
   "homepage": "https://github.com/posva/focus-trap-vue#readme",
   "peerDependencies": {
     "focus-trap": "^5.0.2",
-    "vue": "^2.0.0"
+    "vue": "^2.6.0"
   }
 }
