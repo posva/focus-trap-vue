@@ -1,0 +1,5 @@
+[build]
+  ignore = "git diff --quiet HEAD^ HEAD demo src"
+  publish = "demo_dist"
+  command = "yarn run demo:build"
+
