@@ -1,124 +1,78 @@
-import Vue, { ComponentOptions } from 'vue'
-// import Component from 'vue-class-component'
-import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
+import { defineComponent, onMounted, watch, ref, cloneVNode, onUnmounted } from 'vue';
+import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap';
 
-interface FocusTrapComponentProps {
-  active: boolean
-  escapeDeactivates: boolean
-  returnFocusOnDeactivate: boolean
-  allowOutsideClick: boolean
-  initialFocus: string | (() => any)
-  fallbackFocus: string | (() => any)
-}
-
-interface FocusTrapComponentsMethods {}
-
-interface FocusTrapComponent
-  extends Vue,
-    ComponentOptions<
-      never,
-      {},
-      FocusTrapComponentsMethods,
-      {},
-      FocusTrapComponentProps
-    > {
-  trap: FocusTrapI
-  active: FocusTrapComponentProps['active']
-  escapeDeactivates: FocusTrapComponentProps['escapeDeactivates']
-  returnFocusOnDeactivate: FocusTrapComponentProps['returnFocusOnDeactivate']
-  allowOutsideClick: FocusTrapComponentProps['allowOutsideClick']
-  initialFocus: FocusTrapComponentProps['initialFocus']
-  fallbackFocus: FocusTrapComponentProps['fallbackFocus']
-}
-
-// @ts-ignore
-const FocusTrap: FocusTrapComponent = {
-  // @ts-ignore
+const FocusTrap = defineComponent({
   props: {
     active: {
       // TODO: could be options for activate
-      type: Boolean,
+      type: Boolean as () => boolean,
       default: true,
     },
     escapeDeactivates: {
-      type: Boolean,
+      type: Boolean as () => boolean,
       default: true,
     },
     returnFocusOnDeactivate: {
-      type: Boolean,
+      type: Boolean as () => boolean,
       default: true,
     },
     allowOutsideClick: {
-      type: Boolean,
+      type: Boolean as () => boolean,
       default: true,
     },
-    initialFocus: [String, Function],
-    fallbackFocus: [String, Function],
+    initialFocus: {
+      type: [String as () => string, Function as () => () => HTMLElement],
+      default: undefined,
+    },
+    fallbackFocus: {
+      type: [String as () => string, Function as () => () => HTMLElement],
+      default: undefined,
+    },
   },
-
-  model: {
-    event: 'update:active',
-    prop: 'active',
-  },
-
-  mounted() {
-    this.$watch(
-      'active',
-      (active: boolean) => {
-        if (active) {
+  setup (props, { slots, emit }) {
+    let trap: FocusTrapI | null;
+    const el = ref<HTMLElement | null>(null);
+    onMounted(function () {
+      watch(() => props.active, (active) => {
+        if (active && el.value) {
           // has no effect if already activated
-          this.trap = createFocusTrap(
-            // @ts-ignore
-            this.$el,
+          trap = createFocusTrap(
+            el.value,
             {
-              escapeDeactivates: this.escapeDeactivates,
-              allowOutsideClick: () => this.allowOutsideClick,
-              returnFocusOnDeactivate: this.returnFocusOnDeactivate,
+              escapeDeactivates: props.escapeDeactivates,
+              allowOutsideClick: () => props.allowOutsideClick,
+              returnFocusOnDeactivate: props.returnFocusOnDeactivate,
               onActivate: () => {
-                this.$emit('update:active', true)
-                this.$emit('activate')
+                emit('update:active', true);
+                emit('activate');
               },
               onDeactivate: () => {
-                this.$emit('update:active', false)
-                this.$emit('deactivate')
+                emit('update:active', false);
+                emit('deactivate');
               },
-              initialFocus: this.initialFocus || (() => this.$el),
-              fallbackFocus: this.fallbackFocus,
-            }
-          )
-          this.trap.activate()
+              initialFocus: typeof props.initialFocus === 'string' ? props.initialFocus : props.initialFocus?.() ?? el.value,
+              fallbackFocus: props.fallbackFocus,
+            },
+          );
+          trap.activate();
         } else {
-          this.trap && this.trap.deactivate()
+          trap?.deactivate();
         }
       },
-      { immediate: true }
-    )
+      { immediate: true },
+      );
+    });
+    onUnmounted(() => {
+      trap?.deactivate();
+      trap = null;
+    });
+    return () => {
+      const content = slots.default?.();
+      if (!content || !content.length || content.length > 1) { throw new Error('FocusTrap requires exactly one child'); }
+      const vnode = cloneVNode(content[0], { ref: el });
+      return vnode;
+    };
   },
+});
 
-  beforeDestroy() {
-    this.trap && this.trap.deactivate()
-    // @ts-ignore
-    this.trap = null
-  },
-
-  methods: {
-    activate() {
-      // @ts-ignore
-      this.trap.activate()
-    },
-    deactivate() {
-      // @ts-ignore
-      this.trap.deactivate()
-    },
-  },
-
-  render() {
-    const content = this.$slots.default
-    if (!content || !content.length || content.length > 1)
-      throw new Error('FocusTrap requires exactly one child')
-
-    return content[0]
-  },
-}
-
-export default FocusTrap
+export default FocusTrap;
