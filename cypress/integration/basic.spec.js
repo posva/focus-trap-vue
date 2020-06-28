@@ -2,8 +2,8 @@
 
 describe('default behavior', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080')
-  })
+    cy.visit('http://localhost:8080');
+  });
 
   it('can escape the trap by pressing esc', () => {
     cy.get('#basic .trap')
@@ -18,8 +18,8 @@ describe('default behavior', () => {
       .focused()
       .should('not.have.class', 'trap')
       .get('#basic .trap')
-      .should('not.have.class', 'is-active')
-  })
+      .should('not.have.class', 'is-active');
+  });
 
   it('can escape the trap by using the button', () => {
     cy.get('#basic .trap')
@@ -32,6 +32,6 @@ describe('default behavior', () => {
       .focused()
       .should('not.have.class', 'trap')
       .get('#basic .trap')
-      .should('not.have.class', 'is-active')
-  })
-})
+      .should('not.have.class', 'is-active');
+  });
+});

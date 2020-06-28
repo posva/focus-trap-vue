@@ -1,5 +1,5 @@
 <script>
-import { FocusTrap } from "/@src/";
+import { FocusTrap } from '/@src/'
 
 export default {
   components: { FocusTrap },
@@ -10,14 +10,14 @@ export default {
           isActive: false
         },
         iene: {
-          initialFocus: function initialFocus () {
+          initialFocus: function initialFocus() {
             return this.$refs.ieneInput
           }.bind(this),
           isActive: false
         }
       }
     }
-  },
+  }
 }
 </script>
 
@@ -25,17 +25,18 @@ export default {
   <h1 tabindex="0">focus-trap demo</h1>
 
   <p>
-    <span style="font-size:2em;vertical-align:middle;">☜</span>
+    <span style="font-size: 2em; vertical-align: middle;">☜</span>
     <a
       href="https://github.com/posva/focus-trap-vue"
-      style="vertical-align:middle;"
-    >Return to the repository</a>
+      style="vertical-align: middle;"
+      >Return to the repository</a
+    >
   </p>
 
   <p>
     In the demos below, you'll be able to tell that a focus trap is active
-    because it will turn pink. You should also be able to tell because it
-    will trap your focus!
+    because it will turn pink. You should also be able to tell because it will
+    trap your focus!
   </p>
 
   <p>
@@ -47,10 +48,9 @@ export default {
   <section id="basic">
     <h2>default behavior</h2>
     <p>
-      <button
-        id="activate-default"
-        @click="demos.basic.isActive = true"
-      >activate trap</button>
+      <button id="activate-default" @click="demos.basic.isActive = true">
+        activate trap
+      </button>
     </p>
 
     <focus-trap v-model="demos.basic.isActive">
@@ -67,10 +67,9 @@ export default {
           <a href="#">focusable</a> parts.
         </p>
         <p>
-          <button
-            id="deactivate-default"
-            @click="demos.basic.isActive = false"
-          >deactivate trap</button>
+          <button id="deactivate-default" @click="demos.basic.isActive = false">
+            deactivate trap
+          </button>
         </p>
       </div>
     </focus-trap>
@@ -84,8 +83,8 @@ export default {
     </p>
     <p>
       Also, in this demo the
-      <kbd>Escape</kbd> key does not deactivate the
-      focus trap. You must click the button.
+      <kbd>Escape</kbd> key does not deactivate the focus trap. You must click
+      the button.
     </p>
     <p>
       <button @click="demos.iene.isActive = true">activate trap</button>
@@ -95,10 +94,7 @@ export default {
       v-model="demos.iene.isActive"
       :initial-focus="demos.iene.initialFocus"
     >
-      <div
-        class="trap"
-        :class="demos.iene.isActive && 'is-active'"
-      >
+      <div class="trap" :class="demos.iene.isActive && 'is-active'">
         <p>
           Here is a focus trap
           <a href="#">with</a>
@@ -122,7 +118,7 @@ export default {
 <style>
 body {
   color: #333;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   -webkit-box-sizing: border-box;

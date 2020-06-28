@@ -1,4 +1,4 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp } from 'vue'
+import App from './App.vue'
 
-window.vm = createApp(App).mount("#app")
+window.vm = createApp(App).mount('#app')

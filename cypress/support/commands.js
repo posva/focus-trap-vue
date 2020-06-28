@@ -25,5 +25,5 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('tab', () => {
-  cy.get('body').trigger('keypress', { keyCode: 9, which: 9 })
-})
+  cy.get('body').trigger('keypress', { keyCode: 9, which: 9 });
+});

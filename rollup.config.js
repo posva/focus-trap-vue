@@ -1,19 +1,19 @@
-import replace from 'rollup-plugin-replace'
-import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
-import ts from 'rollup-plugin-typescript2'
-import alias from 'rollup-plugin-alias'
-import { terser } from 'rollup-plugin-terser'
-import pkg from './package.json'
+import replace from 'rollup-plugin-replace';
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import ts from 'rollup-plugin-typescript2';
+import alias from 'rollup-plugin-alias';
+import { terser } from 'rollup-plugin-terser';
+import pkg from './package.json';
 
 const banner = `/*!
   * ${pkg.name} v${pkg.version}
   * (c) ${new Date().getFullYear()} Eduardo San Martin Morote
   * @license MIT
-  */`
+  */`;
 
-const exportName = 'FocusTrapVue'
-const defaultExternals = ['focus-trap']
+const exportName = 'FocusTrapVue';
+const defaultExternals = ['focus-trap'];
 
 function createEntry(
   {
@@ -31,9 +31,9 @@ function createEntry(
   }
 ) {
   // force production mode when minifying
-  if (minify) env = 'production'
+  if (minify) env = 'production';
 
-  external = external || defaultExternals
+  external = external || defaultExternals;
 
   const config = {
     input,
@@ -54,16 +54,16 @@ function createEntry(
       format,
     },
     external,
-  }
+  };
 
   if (format === 'iife') {
     // config.input = 'src/entries/iife.ts'
-    config.output.file = pkg.unpkg
-    config.output.name = exportName
+    config.output.file = pkg.unpkg;
+    config.output.name = exportName;
   } else if (format === 'es') {
-    config.output.file = isBrowser ? pkg.browser : pkg.module
+    config.output.file = isBrowser ? pkg.browser : pkg.module;
   } else if (format === 'cjs') {
-    config.output.file = pkg.main
+    config.output.file = pkg.main;
   }
 
   config.plugins.push(
@@ -79,7 +79,7 @@ function createEntry(
         },
       },
     })
-  )
+  );
 
   if (minify) {
     config.plugins.push(
@@ -89,11 +89,11 @@ function createEntry(
           preamble: banner,
         },
       })
-    )
-    config.output.file = config.output.file.replace(/\.js$/i, '.min.js')
+    );
+    config.output.file = config.output.file.replace(/\.js$/i, '.min.js');
   }
 
-  return config
+  return config;
 }
 
 export default [
@@ -104,4 +104,4 @@ export default [
   createEntry({ format: 'es' }),
   createEntry({ format: 'es', isBrowser: true, external: [] }),
   createEntry({ format: 'es', isBrowser: true, minify: true, external: [] }),
-]
+];
