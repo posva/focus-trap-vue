@@ -5,8 +5,8 @@ import {
   ref,
   cloneVNode,
   onUnmounted,
-} from 'vue';
-import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap';
+} from 'vue'
+import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
 
 const FocusTrap = defineComponent({
   props: {
@@ -37,12 +37,12 @@ const FocusTrap = defineComponent({
     },
   },
   setup(props, { slots, emit }) {
-    let trap: FocusTrapI | null;
-    const el = ref<HTMLElement | null>(null);
+    let trap: FocusTrapI | null
+    const el = ref<HTMLElement | null>(null)
     onMounted(function () {
       watch(
         () => props.active,
-        (active) => {
+        active => {
           if (active && el.value) {
             // has no effect if already activated
             trap = createFocusTrap(el.value, {
@@ -50,40 +50,40 @@ const FocusTrap = defineComponent({
               allowOutsideClick: () => props.allowOutsideClick,
               returnFocusOnDeactivate: props.returnFocusOnDeactivate,
               onActivate: () => {
-                emit('update:active', true);
-                emit('activate');
+                emit('update:active', true)
+                emit('activate')
               },
               onDeactivate: () => {
-                emit('update:active', false);
-                emit('deactivate');
+                emit('update:active', false)
+                emit('deactivate')
               },
               initialFocus:
                 typeof props.initialFocus === 'string'
                   ? props.initialFocus
                   : props.initialFocus?.() ?? el.value,
               fallbackFocus: props.fallbackFocus,
-            });
-            trap.activate();
+            })
+            trap.activate()
           } else {
-            trap?.deactivate();
+            trap?.deactivate()
           }
         },
         { immediate: true }
-      );
-    });
+      )
+    })
     onUnmounted(() => {
-      trap?.deactivate();
-      trap = null;
-    });
+      trap?.deactivate()
+      trap = null
+    })
     return () => {
-      const content = slots.default?.();
+      const content = slots.default?.()
       if (!content || !content.length || content.length > 1) {
-        throw new Error('FocusTrap requires exactly one child');
+        throw new Error('FocusTrap requires exactly one child')
       }
-      const vnode = cloneVNode(content[0], { ref: el });
-      return vnode;
-    };
+      const vnode = cloneVNode(content[0], { ref: el })
+      return vnode
+    }
   },
-});
+})
 
-export default FocusTrap;
+export default FocusTrap

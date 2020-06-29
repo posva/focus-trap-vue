@@ -15,9 +15,9 @@ This library exports one single named export `FocusTrap` and **requires
 dependency**. So you can locally import the component or declare it globally:
 
 ```js
-import { FocusTrap } from 'focus-trap-vue';
+import { FocusTrap } from 'focus-trap-vue'
 
-Vue.component('FocusTrap', FocusTrap);
+Vue.component('FocusTrap', FocusTrap)
 ```
 
 `FocusTrap` can be controlled in three different ways:

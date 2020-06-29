@@ -1,5 +1,5 @@
 <script>
-import { FocusTrap } from '/@src/'
+import { FocusTrap } from '/@/'
 
 export default {
   components: { FocusTrap },
@@ -7,17 +7,17 @@ export default {
     return {
       demos: {
         basic: {
-          isActive: false
+          isActive: false,
         },
         iene: {
           initialFocus: function initialFocus() {
             return this.$refs.ieneInput
           }.bind(this),
-          isActive: false
-        }
-      }
+          isActive: false,
+        },
+      },
     }
-  }
+  },
 }
 </script>
 
