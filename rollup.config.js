@@ -52,8 +52,11 @@ function createEntry(
       banner,
       file: 'dist/index.other.js',
       format,
+      globals: {
+        vue: 'Vue'
+      }
     },
-    external,
+    external: ['vue',  ...external],
   }
 
   if (format === 'iife') {
