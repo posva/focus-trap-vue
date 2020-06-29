@@ -10,4 +10,5 @@ package-lock.json
 .rpt2_cache
 demo_dist
 cypress/videos
+cypress/screenshots
 demo/original.html

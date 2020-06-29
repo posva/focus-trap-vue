@@ -29,8 +29,7 @@ export default {
     <a
       href="https://github.com/posva/focus-trap-vue"
       style="vertical-align: middle;"
-      >Return to the repository</a
-    >
+    >Return to the repository</a>
   </p>
 
   <p>
@@ -48,12 +47,13 @@ export default {
   <section id="basic">
     <h2>default behavior</h2>
     <p>
-      <button id="activate-default" @click="demos.basic.isActive = true">
-        activate trap
-      </button>
+      <button
+        id="activate-default"
+        @click="demos.basic.isActive = true"
+      >activate trap</button>
     </p>
 
-    <focus-trap v-model="demos.basic.isActive">
+    <focus-trap v-model:active="demos.basic.isActive">
       <div
         id="default"
         class="trap"
@@ -67,9 +67,10 @@ export default {
           <a href="#">focusable</a> parts.
         </p>
         <p>
-          <button id="deactivate-default" @click="demos.basic.isActive = false">
-            deactivate trap
-          </button>
+          <button
+            id="deactivate-default"
+            @click="demos.basic.isActive = false"
+          >deactivate trap</button>
         </p>
       </div>
     </focus-trap>
@@ -91,10 +92,13 @@ export default {
     </p>
 
     <focus-trap
-      v-model="demos.iene.isActive"
+      v-model:active="demos.iene.isActive"
       :initial-focus="demos.iene.initialFocus"
     >
-      <div class="trap" :class="demos.iene.isActive && 'is-active'">
+      <div
+        class="trap"
+        :class="demos.iene.isActive && 'is-active'"
+      >
         <p>
           Here is a focus trap
           <a href="#">with</a>
@@ -118,7 +122,7 @@ export default {
 <style>
 body {
   color: #333;
-  font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   -webkit-box-sizing: border-box;

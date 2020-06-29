@@ -2,7 +2,7 @@
 
 describe('default behavior', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080')
+    cy.visit('http://localhost:3000')
   })
 
   it('can escape the trap by pressing esc', () => {

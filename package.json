@@ -22,7 +22,7 @@
     "lint": "echo prettier",
     "pretest": "yarn run lint",
     "cy:run": "cypress run",
-    "test:e2e": "start-server-and-test start http-get://localhost:8080 cy:run",
+    "test:e2e": "start-server-and-test start http-get://localhost:3000 cy:run",
     "test": "yarn run build && yarn run test:e2e",
     "prepublishOnly": "yarn run build"
   },
@@ -46,7 +46,6 @@
     "cypress": "^4.0.0",
     "cypress-plugin-tab": "^1.0.1",
     "focus-trap": "^5.1.0",
-    "html-webpack-plugin": "^4.0.1",
     "rollup": "^2.0.3",
     "rollup-plugin-alias": "^2.0.0",
     "rollup-plugin-commonjs": "^10.0.1",
@@ -55,14 +54,9 @@
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-typescript2": "^0.27.0",
     "start-server-and-test": "^1.9.1",
-    "terser-webpack-plugin": "^3.0.0",
-    "ts-loader": "^7.0.0",
     "typescript": "^3.9.0",
     "vue": "^3.0.0-beta.15",
-    "vite": "^1.0.0-beta.8",
-    "webpack": "^4.38.0",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "vite": "^1.0.0-beta.8"
   },
   "repository": {
     "type": "git",
@@ -73,7 +67,7 @@
   },
   "homepage": "https://github.com/posva/focus-trap-vue#readme",
   "peerDependencies": {
-    "focus-trap": "^5.1.0",
+    "focus-trap": "^5.0.0",
     "vue": "^3.0.0-beta.15"
   }
 }
