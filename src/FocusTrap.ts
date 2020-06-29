@@ -5,6 +5,7 @@ import {
   ref,
   cloneVNode,
   onUnmounted,
+  PropType
 } from 'vue'
 import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
 
@@ -12,27 +13,27 @@ const FocusTrap = defineComponent({
   props: {
     active: {
       // TODO: could be options for activate
-      type: Boolean as () => boolean,
+      type: Boolean as PropType<boolean>,
       default: true,
     },
     escapeDeactivates: {
-      type: Boolean as () => boolean,
+      type: Boolean as PropType<boolean>,
       default: true,
     },
     returnFocusOnDeactivate: {
-      type: Boolean as () => boolean,
+      type: Boolean as PropType<boolean>,
       default: true,
     },
     allowOutsideClick: {
-      type: Boolean as () => boolean,
+      type: Boolean as PropType<boolean>,
       default: true,
     },
     initialFocus: {
-      type: [String as () => string, Function as () => () => HTMLElement],
+      type: [String, Function] as PropType<string | (() => HTMLElement)>,
       default: undefined,
     },
     fallbackFocus: {
-      type: [String as () => string, Function as () => () => HTMLElement],
+      type: [String, Function] as PropType<string | (() => HTMLElement)>,
       default: undefined,
     },
   },
@@ -76,11 +77,11 @@ const FocusTrap = defineComponent({
       trap = null
     })
     return () => {
-      const content = slots.default?.()
-      if (!content || !content.length || content.length > 1) {
+      const vNodes = slots.default?.()
+      if (!vNodes || !vNodes.length || vNodes.length > 1) {
         throw new Error('FocusTrap requires exactly one child')
       }
-      const vnode = cloneVNode(content[0], { ref: el })
+      const vnode = cloneVNode(vNodes[0], { ref: el })
       return vnode
     }
   },
