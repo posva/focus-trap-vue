@@ -56,7 +56,7 @@
     "rollup-plugin-typescript2": "^0.27.0",
     "start-server-and-test": "^1.9.1",
     "terser-webpack-plugin": "^3.0.0",
-    "ts-loader": "^7.0.0",
+    "ts-loader": "^8.0.0",
     "typescript": "^3.5.3",
     "vue": "^2.6.10",
     "webpack": "^4.38.0",
