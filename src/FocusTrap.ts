@@ -9,15 +9,6 @@ import {
 } from 'vue'
 import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
 
-export interface FocusTrapProps {
-  active: boolean
-  escapeDeactivates: boolean
-  returnFocusOnDeactivate: boolean
-  allowOutsideClick: boolean
-  initialFocus: string | (() => any)
-  fallbackFocus: string | (() => any)
-}
-
 const FocusTrap = defineComponent({
   props: {
     active: {
