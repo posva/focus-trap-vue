@@ -5,45 +5,55 @@ import {
   ref,
   cloneVNode,
   onUnmounted,
-  PropType
+  PropType,
 } from 'vue'
 import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
+
+export interface FocusTrapProps {
+  active: boolean
+  escapeDeactivates: boolean
+  returnFocusOnDeactivate: boolean
+  allowOutsideClick: boolean
+  initialFocus: string | (() => any)
+  fallbackFocus: string | (() => any)
+}
 
 const FocusTrap = defineComponent({
   props: {
     active: {
       // TODO: could be options for activate
-      type: Boolean as PropType<boolean>,
+      type: Boolean,
       default: true,
     },
     escapeDeactivates: {
-      type: Boolean as PropType<boolean>,
+      type: Boolean,
       default: true,
     },
     returnFocusOnDeactivate: {
-      type: Boolean as PropType<boolean>,
+      type: Boolean,
       default: true,
     },
     allowOutsideClick: {
-      type: Boolean as PropType<boolean>,
+      type: Boolean,
       default: true,
     },
     initialFocus: {
       type: [String, Function] as PropType<string | (() => HTMLElement)>,
-      default: undefined,
     },
     fallbackFocus: {
       type: [String, Function] as PropType<string | (() => HTMLElement)>,
-      default: undefined,
     },
   },
+
   setup(props, { slots, emit }) {
     let trap: FocusTrapI | null
     const el = ref<HTMLElement | null>(null)
-    onMounted(function () {
+
+    onMounted(() => {
       watch(
         () => props.active,
         active => {
+          const { initialFocus } = props
           if (active && el.value) {
             // has no effect if already activated
             trap = createFocusTrap(el.value, {
@@ -58,26 +68,31 @@ const FocusTrap = defineComponent({
                 emit('update:active', false)
                 emit('deactivate')
               },
-              initialFocus:
-                typeof props.initialFocus === 'string'
-                  ? props.initialFocus
-                  : props.initialFocus?.() ?? el.value,
+              initialFocus: initialFocus
+                ? typeof initialFocus === 'function'
+                  ? initialFocus()
+                  : initialFocus
+                : el.value,
               fallbackFocus: props.fallbackFocus,
             })
             trap.activate()
-          } else {
-            trap?.deactivate()
+          } else if (trap) {
+            trap.deactivate()
           }
         },
         { immediate: true }
       )
     })
+
     onUnmounted(() => {
-      trap?.deactivate()
+      if (trap) trap.deactivate()
       trap = null
     })
+
     return () => {
-      const vNodes = slots.default?.()
+      if (!slots.default) return null
+
+      const vNodes = slots.default!()
       if (!vNodes || !vNodes.length || vNodes.length > 1) {
         throw new Error('FocusTrap requires exactly one child')
       }
