@@ -6,4 +6,4 @@ workflows:
     jobs:
       - cypress/run:
           yarn: true
-          executor: browsers-chrome77
+          executor: cypress/browsers-chrome77
