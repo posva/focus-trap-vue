@@ -1,26 +1,7 @@
-version: 2
-
-jobs:
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1.16.1
+workflows:
   build:
-    docker:
-      - image: circleci/node:12-browsers
-
-    working_directory: ~/repo
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - deps-cypress-cache-{{ checksum "yarn.lock" }}
-            - deps-cypress-cache-
-
-      - run: yarn install
-
-      - save_cache:
-          paths:
-            - node_modules
-            - ~/.cache/Cypress
-          key: deps-cypress-cache-{{ checksum "yarn.lock" }}
-
-      - run: yarn run test
+    jobs:
+      - cypress/run
