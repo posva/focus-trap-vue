@@ -9,7 +9,7 @@ import {
 } from 'vue'
 import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
 
-const FocusTrap = defineComponent({
+export const FocusTrap = defineComponent({
   props: {
     active: {
       // TODO: could be options for activate
@@ -92,5 +92,3 @@ const FocusTrap = defineComponent({
     }
   },
 })
-
-export default FocusTrap

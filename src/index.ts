@@ -1,3 +1,1 @@
-import FocusTrap from './FocusTrap'
-
-export { FocusTrap }
+export { FocusTrap } from './FocusTrap'

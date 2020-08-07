@@ -1,13 +1,13 @@
 {
   "name": "focus-trap-vue",
-  "version": "1.0.0-beta.0",
+  "version": "2.0.0",
   "description": "Vue component to trap the focus within a DOM element",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "browser": "dist/index.browser.esm.js",
-  "unpkg": "dist/index.umd.js",
-  "jsdelivr": "dist/index.umd.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/focus-trap-vue.cjs.js",
+  "browser": "dist/focus-trap-vue.esm.js",
+  "unpkg": "dist/focus-trap-vue.global.js",
+  "jsdelivr": "dist/focus-trap-vue.global.js",
+  "module": "dist/focus-trap-vue.esm-bundler.js",
+  "types": "dist/focus-trap-vue.d.ts",
   "sideEffects": false,
   "author": {
     "name": "Eduardo San Martin Morote",
@@ -19,15 +19,21 @@
     "dev": "vite serve",
     "start": "vite serve --mode production",
     "demo:build": "vite build",
-    "lint": "echo prettier",
-    "pretest": "yarn run lint",
     "cy:run": "cypress run",
     "test:e2e": "start-server-and-test start http-get://localhost:3000 cy:run",
-    "test": "yarn run build && yarn run test:e2e",
-    "prepublishOnly": "yarn run build"
+    "build:dts": "api-extractor run --local --verbose",
+    "release": "bash scripts/release.sh",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1",
+    "size": "size-limit",
+    "lint": "prettier -c --parser typescript \"{src,__tests__,e2e}/**/*.[jt]s?(x)\"",
+    "lint:fix": "yarn run lint --write",
+    "test:types": "tsc --build tsconfig.json",
+    "test": "yarn run test:types && yarn run test:e2e && yarn run build && yarn run build:dts"
   },
   "files": [
-    "dist",
+    "dist/*.js",
+    "dist/focus-trap-vue.d.ts",
+    "LICENSE",
     "README.md"
   ],
   "keywords": [
@@ -46,18 +52,43 @@
     "cypress": "^4.0.0",
     "cypress-plugin-tab": "^1.0.1",
     "focus-trap": "^5.1.0",
-    "rollup": "^2.0.3",
-    "rollup-plugin-alias": "^2.0.0",
-    "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-terser": "^6.1.0",
-    "rollup-plugin-typescript2": "^0.27.0",
     "start-server-and-test": "^1.9.1",
-    "typescript": "^3.9.0",
-    "vue": "^3.0.0-beta.15",
-    "vite": "^1.0.0-beta.8"
+    "vite": "^1.0.0-beta.8",
+    "@microsoft/api-extractor": "7.8.1",
+    "@rollup/plugin-alias": "^3.1.1",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@rollup/plugin-replace": "^2.3.3",
+    "@size-limit/preset-small-lib": "^4.5.5",
+    "conventional-changelog-cli": "^2.0.34",
+    "lint-staged": "^10.2.11",
+    "pascalcase": "^1.0.0",
+    "prettier": "^2.0.5",
+    "rollup": "^2.23.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "size-limit": "^4.5.5",
+    "typescript": "^3.9.7",
+    "vue": "^3.0.0-rc.5",
+    "yorkie": "^2.0.0"
   },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node scripts/verifyCommit.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "size-limit": [
+    {
+      "path": "size-checks/basic.js"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/posva/focus-trap-vue.git"
