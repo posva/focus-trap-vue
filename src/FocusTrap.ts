@@ -6,6 +6,7 @@ import {
   cloneVNode,
   onUnmounted,
   PropType,
+  Comment,
 } from 'vue'
 import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
 
@@ -83,9 +84,15 @@ export const FocusTrap = defineComponent({
     return () => {
       if (!slots.default) return null
 
-      const vNodes = slots.default!()
+      const vNodes = slots.default().filter(vnode => vnode.type !== Comment)
       if (!vNodes || !vNodes.length || vNodes.length > 1) {
-        throw new Error('FocusTrap requires exactly one child')
+        if (__DEV__) {
+          console.error(
+            '[focus-trap-vue]: FocusTrap requires exactly one child.'
+          )
+        }
+
+        return vNodes
       }
       const vnode = cloneVNode(vNodes[0], { ref: el })
       return vnode
