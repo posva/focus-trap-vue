@@ -1,4 +1,4 @@
-# focus-trap-vue [![Build Status](https://badgen.net/circleci/github/posva/focus-trap-vue)](https://circleci.com/gh/posva/focus-trap-vue) [![npm package](https://badgen.net/npm/v/focus-trap-vue)](https://www.npmjs.com/package/focus-trap-vue) [![thanks](https://badgen.net/badge/thanks/♥/pink)](https://github.com/posva/thanks)
+# focus-trap-vue [![Build Status](https://badgen.net/circleci/github/posva/focus-trap-vue/next)](https://circleci.com/gh/posva/focus-trap-vue) [![npm package](https://badgen.net/npm/v/focus-trap-vue/next)](https://www.npmjs.com/package/focus-trap-vue) [![thanks](https://badgen.net/badge/thanks/♥/pink)](https://github.com/posva/thanks)
 
 > Vue component to trap the focus within a DOM element
 
