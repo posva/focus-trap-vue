@@ -1,3 +1,104 @@
+<template>
+  <div>
+    <h1 tabindex="0">focus-trap demo</h1>
+
+    <p>
+      <span style="font-size: 2em; vertical-align: middle;">☜</span>
+      <a
+        href="https://github.com/posva/focus-trap-vue"
+        style="vertical-align: middle;"
+        >Return to the repository</a
+      >
+    </p>
+
+    <p>
+      In the demos below, you'll be able to tell that a focus trap is active
+      because it will turn pink. You should also be able to tell because it will
+      trap your focus!
+    </p>
+
+    <p>
+      When a trap is active, you can deactivate it by pushing its deactivate
+      button or, if the demo allows, hitting
+      <kbd>Escape</kbd>.
+    </p>
+
+    <section id="basic">
+      <h2>default behavior</h2>
+      <p>
+        <button id="activate-default" @click="demos.basic.isActive = true">
+          activate trap
+        </button>
+      </p>
+
+      <focus-trap v-model:active="demos.basic.isActive">
+        <div
+          id="default"
+          class="trap"
+          :class="demos.basic.isActive && 'is-active'"
+          tabindex="-1"
+        >
+          <p>
+            Here is a focus trap
+            <a href="#">with</a>
+            <a href="#">some</a>
+            <a href="#">focusable</a> parts.
+          </p>
+          <p>
+            <button
+              id="deactivate-default"
+              @click="demos.basic.isActive = false"
+            >
+              deactivate trap
+            </button>
+          </p>
+        </div>
+      </focus-trap>
+    </section>
+
+    <section id="iene">
+      <h2 id="iene-heading">initial element, no escape</h2>
+      <p>
+        When this focus trap activates, focus jumps to a specific, manually
+        specified element.
+      </p>
+      <p>
+        Also, in this demo the
+        <kbd>Escape</kbd> key does not deactivate the focus trap. You must click
+        the button.
+      </p>
+      <p>
+        <button @click="demos.iene.isActive = true">activate trap</button>
+      </p>
+
+      <focus-trap
+        v-model:active="demos.iene.isActive"
+        :initial-focus="demos.iene.initialFocus"
+      >
+        <div class="trap" :class="demos.iene.isActive && 'is-active'">
+          <p>
+            Here is a focus trap
+            <a href="#">with</a>
+            <a href="#">some</a>
+            <a href="#">focusable</a> parts.
+          </p>
+          <p>
+            <label class="inline-label">
+              Initially focused input
+              <input ref="ieneInput" />
+            </label>
+          </p>
+          <p>
+            <button @click="demos.iene.isActive = false">
+              deactivate trap
+            </button>
+          </p>
+        </div>
+      </focus-trap>
+    </section>
+  </div>
+</template>
+
 <script>
 import { FocusTrap } from '/@/'
 
@@ -18,100 +119,6 @@ export default {
   },
 }
 </script>
-
-<template>
-  <h1 tabindex="0">focus-trap demo</h1>
-
-  <p>
-    <span style="font-size: 2em; vertical-align: middle;">☜</span>
-    <a
-      href="https://github.com/posva/focus-trap-vue"
-      style="vertical-align: middle;"
-      >Return to the repository</a
-    >
-  </p>
-
-  <p>
-    In the demos below, you'll be able to tell that a focus trap is active
-    because it will turn pink. You should also be able to tell because it will
-    trap your focus!
-  </p>
-
-  <p>
-    When a trap is active, you can deactivate it by pushing its deactivate
-    button or, if the demo allows, hitting
-    <kbd>Escape</kbd>.
-  </p>
-
-  <section id="basic">
-    <h2>default behavior</h2>
-    <p>
-      <button id="activate-default" @click="demos.basic.isActive = true">
-        activate trap
-      </button>
-    </p>
-
-    <focus-trap v-model:active="demos.basic.isActive">
-      <div
-        id="default"
-        class="trap"
-        :class="demos.basic.isActive && 'is-active'"
-        tabindex="-1"
-      >
-        <p>
-          Here is a focus trap
-          <a href="#">with</a>
-          <a href="#">some</a>
-          <a href="#">focusable</a> parts.
-        </p>
-        <p>
-          <button id="deactivate-default" @click="demos.basic.isActive = false">
-            deactivate trap
-          </button>
-        </p>
-      </div>
-    </focus-trap>
-  </section>
-
-  <section id="iene">
-    <h2 id="iene-heading">initial element, no escape</h2>
-    <p>
-      When this focus trap activates, focus jumps to a specific, manually
-      specified element.
-    </p>
-    <p>
-      Also, in this demo the
-      <kbd>Escape</kbd> key does not deactivate the focus trap. You must click
-      the button.
-    </p>
-    <p>
-      <button @click="demos.iene.isActive = true">activate trap</button>
-    </p>
-
-    <focus-trap
-      v-model:active="demos.iene.isActive"
-      :initial-focus="demos.iene.initialFocus"
-    >
-      <div class="trap" :class="demos.iene.isActive && 'is-active'">
-        <p>
-          Here is a focus trap
-          <a href="#">with</a>
-          <a href="#">some</a>
-          <a href="#">focusable</a> parts.
-        </p>
-        <p>
-          <label class="inline-label">
-            Initially focused input
-            <input ref="ieneInput" />
-          </label>
-        </p>
-        <p>
-          <button @click="demos.iene.isActive = false">deactivate trap</button>
-        </p>
-      </div>
-    </focus-trap>
-  </section>
-</template>
 
 <style>
 body {
