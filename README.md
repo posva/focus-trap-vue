@@ -84,7 +84,7 @@ documentation to know what they do.
 `FocusTrap` emits 2 events. They are in-sync with the prop `active`
 
 - `activate`: Whenever the trap activates
-- `deactive`: Whenever the trap deactivates (note it can also be deactivated by
+- `deactivate`: Whenever the trap deactivates (note it can also be deactivated by
   pressing <kbd>Esc</kbd> or clicking outside)
 
 ### Methods
