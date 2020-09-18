@@ -1,6 +1,6 @@
 {
   "name": "focus-trap-vue",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "Vue component to trap the focus within a DOM element",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -45,7 +45,7 @@
   "devDependencies": {
     "cypress": "^5.0.0",
     "cypress-plugin-tab": "^1.0.1",
-    "focus-trap": "^5.0.2",
+    "focus-trap": "^6.0.1",
     "html-webpack-plugin": "^4.0.1",
     "rollup": "^2.0.3",
     "rollup-plugin-alias": "^2.0.0",
@@ -57,9 +57,9 @@
     "start-server-and-test": "^1.9.1",
     "terser-webpack-plugin": "^4.0.0",
     "ts-loader": "^8.0.0",
-    "typescript": "^3.5.3",
+    "typescript": "^4.0.2",
     "vue": "^2.6.10",
-    "webpack": "^4.38.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
   },
@@ -72,7 +72,7 @@
   },
   "homepage": "https://github.com/posva/focus-trap-vue#readme",
   "peerDependencies": {
-    "focus-trap": "^5.0.2",
+    "focus-trap": "^6.0.1",
     "vue": "^2.6.0"
   }
 }

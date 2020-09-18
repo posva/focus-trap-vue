@@ -1,6 +1,6 @@
 import Vue, { ComponentOptions } from 'vue'
 // import Component from 'vue-class-component'
-import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
+import { createFocusTrap, FocusTrap as FocusTrapI } from 'focus-trap'
 
 interface FocusTrapComponentProps {
   active: boolean
@@ -15,13 +15,7 @@ interface FocusTrapComponentsMethods {}
 
 interface FocusTrapComponent
   extends Vue,
-    ComponentOptions<
-      never,
-      {},
-      FocusTrapComponentsMethods,
-      {},
-      FocusTrapComponentProps
-    > {
+    ComponentOptions<never, {}, FocusTrapComponentsMethods, {}, {}> {
   trap: FocusTrapI
   active: FocusTrapComponentProps['active']
   escapeDeactivates: FocusTrapComponentProps['escapeDeactivates']
