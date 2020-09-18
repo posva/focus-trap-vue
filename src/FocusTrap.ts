@@ -8,7 +8,7 @@ import {
   PropType,
   Comment,
 } from 'vue'
-import createFocusTrap, { FocusTrap as FocusTrapI } from 'focus-trap'
+import { createFocusTrap, FocusTrap as FocusTrapI } from 'focus-trap'
 
 export const FocusTrap = defineComponent({
   props: {
