@@ -1,3 +1,7 @@
+## [3.0.1](https://github.com/posva/focus-trap-vue/compare/v3.0.0...v3.0.1) (2020-09-18)
+
+- Build fixes
+
 # [3.0.0](https://github.com/posva/focus-trap-vue/compare/v2.0.1...v3.0.0) (2020-09-18)
 
 - Upgrade to focus-trap 6
