@@ -48,12 +48,50 @@
             <button
               id="deactivate-default"
               @click="demos.basic.isActive = false"
-            >
-              deactivate trap
-            </button>
+            >deactivate trap</button>
           </p>
         </div>
       </focus-trap>
+    </section>
+
+    <section id="vif">
+      <h2>With v-if (ie: transitioning component)</h2>
+      <p>
+        <button
+          id="activate-default"
+          @click="demos.vif.isActive = true"
+        >activate trap</button>
+      </p>
+        <focus-trap
+          v-model:active="demos.vif.isActive"
+        >
+          <transition
+            name="fade"
+            appear
+          >
+            <div
+              id="default"
+              class="trap"
+              v-if="demos.vif.isActive"
+              :class="demos.vif.isActive && 'is-active'"
+              tabindex="-1"
+              ref="vifContainer"
+            >
+              <p>
+                Here is a focus trap
+                <a href="#">with</a>
+                <a href="#">some</a>
+                <a href="#">focusable</a> parts.
+              </p>
+              <p>
+                <button
+                  id="deactivate-default"
+                  @click="demos.vif.isActive = false"
+                >deactivate trap</button>
+              </p>
+            </div>
+          </transition>
+        </focus-trap>
     </section>
 
     <section id="iene">
@@ -110,6 +148,9 @@ export default {
         basic: {
           isActive: false,
         },
+        vif: {
+          isActive: false,
+        },
         iene: {
           initialFocus: () => this.$refs.ieneInput,
           isActive: false,
@@ -155,6 +196,19 @@ body {
 #demo-four,
 #initial-nine {
   outline: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave-from,
+.fade-enter-to {
+  opacity: 1;
 }
 
 code,

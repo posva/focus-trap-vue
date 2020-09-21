@@ -72,7 +72,7 @@ export const FocusTrap = defineComponent({
             trap.deactivate()
           }
         },
-        { immediate: true }
+        { immediate: true, flush: 'post' }
       )
     })
 
