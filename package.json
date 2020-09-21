@@ -19,7 +19,7 @@
     "dev": "vite serve",
     "start": "vite serve --mode production",
     "demo:build": "vite build",
-    "cy:run": "cypress run",
+    "cy:run": "cypress open",
     "test:e2e": "start-server-and-test start http-get://localhost:3000 cy:run",
     "build:dts": "api-extractor run --local --verbose",
     "release": "bash scripts/release.sh",
@@ -68,8 +68,9 @@
     "size-limit": "^4.6.0",
     "start-server-and-test": "^1.11.3",
     "typescript": "^4.0.2",
-    "vite": "^1.0.0-beta.8",
-    "vue": "^3.0.0-rc.5",
+    "vite": "^1.0.0-rc.4",
+    "vue": "^3.0.0",
+    "@vue/compiler-sfc": "^3.0.0",
     "yorkie": "^2.0.0"
   },
   "gitHooks": {
