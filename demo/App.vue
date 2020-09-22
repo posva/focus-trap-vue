@@ -112,6 +112,7 @@
       <focus-trap
         v-model:active="demos.iene.isActive"
         :initial-focus="demos.iene.initialFocus"
+        :escape-deactivates="false"
       >
         <div class="trap" :class="demos.iene.isActive && 'is-active'">
           <p>
@@ -200,7 +201,7 @@ body {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 3s ease;
+  transition: opacity .3s ease;
 }
 .fade-enter-from,
 .fade-leave-to {
