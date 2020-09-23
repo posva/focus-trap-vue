@@ -1,3 +1,9 @@
+## [3.0.2](https://github.com/posva/focus-trap-vue/compare/v3.0.1...v3.0.2) (2020-09-23)
+
+### Bug Fixes
+
+- watcher flush option to post ([aa2582d](https://github.com/posva/focus-trap-vue/commit/aa2582df912475d2ca91e5fb1296c1d113085e78))
+
 ## [3.0.1](https://github.com/posva/focus-trap-vue/compare/v3.0.0...v3.0.1) (2020-09-18)
 
 - Build fixes
