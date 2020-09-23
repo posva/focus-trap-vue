@@ -15,12 +15,12 @@ function assertActivatedTrap(id) {
   cy.get(`${id} .trap`).should('have.class', 'is-active')
 }
 
-describe('Spec', () => {
+describe('focus trap vue', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
   })
 
-  describe('Default', () => {
+  describe('default behavior', () => {
     it('can escape the trap by pressing esc', () => {
       activateTrapWithButton('#basic')
       assertActivatedTrap('#basic')
