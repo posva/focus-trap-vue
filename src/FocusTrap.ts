@@ -7,6 +7,7 @@ interface FocusTrapComponentProps {
   escapeDeactivates: boolean
   returnFocusOnDeactivate: boolean
   allowOutsideClick: boolean
+  clickOutsideDeactivates: boolean
   initialFocus: string | (() => any)
   fallbackFocus: string | (() => any)
 }
@@ -21,6 +22,7 @@ interface FocusTrapComponent
   escapeDeactivates: FocusTrapComponentProps['escapeDeactivates']
   returnFocusOnDeactivate: FocusTrapComponentProps['returnFocusOnDeactivate']
   allowOutsideClick: FocusTrapComponentProps['allowOutsideClick']
+  clickOutsideDeactivates: FocusTrapComponentProps['clickOutsideDeactivates']
   initialFocus: FocusTrapComponentProps['initialFocus']
   fallbackFocus: FocusTrapComponentProps['fallbackFocus']
 }
@@ -46,6 +48,10 @@ const FocusTrap: FocusTrapComponent = {
       type: Boolean,
       default: true,
     },
+    clickOutsideDeactivates: {
+      type: Boolean,
+      default: false,
+    },
     initialFocus: [String, Function],
     fallbackFocus: [String, Function],
   },
@@ -67,6 +73,7 @@ const FocusTrap: FocusTrapComponent = {
             {
               escapeDeactivates: this.escapeDeactivates,
               allowOutsideClick: () => this.allowOutsideClick,
+              clickOutsideDeactivates: this.clickOutsideDeactivates,
               returnFocusOnDeactivate: this.returnFocusOnDeactivate,
               onActivate: () => {
                 this.$emit('update:active', true)

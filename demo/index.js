@@ -17,7 +17,11 @@ window.vm = new Vue({
             return this.$refs.ieneInput
           }.bind(this),
           isActive: false
-        }
+        },
+        ocd: {
+          isActive: false,
+          clickOutsideDeactivates: true
+        },
       }
     }
   },
