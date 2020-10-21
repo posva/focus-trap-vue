@@ -34,4 +34,18 @@ describe('default behavior', () => {
       .get('#basic .trap')
       .should('not.have.class', 'is-active')
   })
+
+  it('can escape the trap by clicking outside of the bounds of the focus trap', () => {
+    cy.get('#ocd .trap')
+      .get('#ocd > p > button')
+      .click()
+      .get('#ocd .trap')
+      .should('have.class', 'is-active')
+      .get('body')
+      .click()
+      .focused()
+      .should('not.have.class', 'trap')
+      .get('#ocd .trap')
+      .should('not.have.class', 'is-active')
+  })
 })
