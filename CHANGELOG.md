@@ -1,3 +1,9 @@
+# [3.1.0](https://github.com/posva/focus-trap-vue/compare/v3.0.2...v3.1.0) (2020-10-22)
+
+### Features
+
+- backport support of clickOutsideDeactivates for next ([#302](https://github.com/posva/focus-trap-vue/issues/302)) ([#303](https://github.com/posva/focus-trap-vue/issues/303)) ([b12d6ce](https://github.com/posva/focus-trap-vue/commit/b12d6cea16506d65388cdd8df81797e2f650247a))
+
 ## [3.0.2](https://github.com/posva/focus-trap-vue/compare/v3.0.1...v3.0.2) (2020-09-23)
 
 ### Bug Fixes
