@@ -79,4 +79,13 @@ describe('focus trap vue', () => {
       assertActivatedTrap('#iene')
     })
   })
+
+  describe('Outside clicks deactivates', () => {
+    it('can escape the trap by clicking outside of the bounds of the focus trap', () => {
+      activateTrapWithButton('#ocd')
+      assertActivatedTrap('#ocd')
+      cy.get('body').click()
+      assertDeactivatedTrap('#ocd')
+    })
+  })
 })

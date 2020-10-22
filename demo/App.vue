@@ -135,6 +135,46 @@
         </div>
       </focus-trap>
     </section>
+    <section id="ocd">
+      <h2 id="ocd-heading">Click outside deactivates</h2>
+      <p>
+        When this focus trap activates, focus jumps to a specific, manually
+        specified element.
+      </p>
+      <p>
+        Also, in this demo the
+        <kbd>Escape</kbd> key does not deactivate the focus trap. You must click
+        the button.
+      </p>
+      <p>
+        <button @click="demos.ocd.isActive = true">activate trap</button>
+      </p>
+
+      <focus-trap
+        v-model:active="demos.ocd.isActive"
+        :click-outside-deactivates="true"
+      >
+        <div class="trap" :class="demos.ocd.isActive && 'is-active'">
+          <p>
+            Here is a focus trap
+            <a href="#">with</a>
+            <a href="#">some</a>
+            <a href="#">focusable</a> parts.
+          </p>
+          <p>
+            <label class="inline-label">
+              Initially focused input
+              <input ref="ieneInput" />
+            </label>
+          </p>
+          <p>
+            <button @click="demos.ocd.isActive = false">
+              deactivate trap
+            </button>
+          </p>
+        </div>
+      </focus-trap>
+    </section>
   </div>
 </template>
 
@@ -154,6 +194,9 @@ export default {
         },
         iene: {
           initialFocus: () => this.$refs.ieneInput,
+          isActive: false,
+        },
+        ocd: {
           isActive: false,
         },
       },

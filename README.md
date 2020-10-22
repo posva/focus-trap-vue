@@ -71,6 +71,7 @@ always focus an interactable element instead of the modal container:
 - `escapeDeactivates`: `boolean`
 - `returnFocusOnDeactivate`: `boolean`
 - `allowOutsideClick`: `boolean`
+- `clickOutsideDeactivates`: `boolean`
 - `initialFocus`: `string | (() => Element)` _Selector or function returning an Element_
 - `fallbackFocus`: `string | (() => Element)` _Selector or function returning an
   Element_
