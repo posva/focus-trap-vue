@@ -29,6 +29,10 @@ export const FocusTrap = defineComponent({
       type: Boolean,
       default: true,
     },
+    clickOutsideDeactivates: {
+      type: Boolean,
+      default: false,
+    },
     initialFocus: {
       type: [String, Function] as PropType<string | (() => HTMLElement)>,
     },
@@ -52,6 +56,7 @@ export const FocusTrap = defineComponent({
               escapeDeactivates: props.escapeDeactivates,
               allowOutsideClick: () => props.allowOutsideClick,
               returnFocusOnDeactivate: props.returnFocusOnDeactivate,
+              clickOutsideDeactivates: props.clickOutsideDeactivates,
               onActivate: () => {
                 emit('update:active', true)
                 emit('activate')
