@@ -182,6 +182,50 @@
           </div>
         </focus-trap>
       </section>
+
+      <section id="aoc">
+        <h2 id="aoc-heading">allow outside click</h2>
+        <p>
+          A callback function can be used to determine whether or not you
+          should be allowed to click outside of the focus trap when it's
+          deactivated.
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" v-model="demos.aoc.clickOutsideEnabled">
+            Enable outside clicking
+          </label>
+        </p>
+        <p>
+          <button @click="demos.aoc.isActive = true">
+            activate trap
+          </button>
+        </p>
+
+        <focus-trap
+          v-model="demos.aoc.isActive"
+          :initial-focus="demos.aoc.initialFocus"
+          :allow-outside-click="demos.aoc.allowOutsideClick"
+        >
+          <div class="trap" :class="demos.aoc.isActive && 'is-active'">
+            <p>
+              Here is a focus trap <a href="#">with</a> <a href="#">some</a>
+              <a href="#">focusable</a> parts.
+            </p>
+            <p>
+              <label class="inline-label">
+                Initially focused input
+                <input ref="ocdInput" />
+              </label>
+            </p>
+            <p>
+              <button @click="demos.aoc.isActive = false">
+                deactivate trap
+              </button>
+            </p>
+          </div>
+        </focus-trap>
+      </section>
     </div>
   </body>
 </html>

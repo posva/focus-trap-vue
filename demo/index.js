@@ -22,6 +22,11 @@ window.vm = new Vue({
           isActive: false,
           clickOutsideDeactivates: true
         },
+        aoc: {
+          clickOutsideEnabled: false,
+          isActive: false,
+          allowOutsideClick: () => this.demos.aoc.clickOutsideEnabled,
+        },
       }
     }
   },
