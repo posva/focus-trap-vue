@@ -1,4 +1,4 @@
-import Vue, { ComponentOptions } from 'vue'
+import Vue, { PropType, ComponentOptions } from 'vue'
 // import Component from 'vue-class-component'
 import { createFocusTrap, FocusTrap as FocusTrapI } from 'focus-trap'
 
@@ -6,7 +6,7 @@ interface FocusTrapComponentProps {
   active: boolean
   escapeDeactivates: boolean
   returnFocusOnDeactivate: boolean
-  allowOutsideClick: boolean
+  allowOutsideClick: boolean | ((e: MouseEvent) => boolean)
   clickOutsideDeactivates: boolean
   initialFocus: string | (() => any)
   fallbackFocus: string | (() => any)
@@ -45,7 +45,7 @@ const FocusTrap: FocusTrapComponent = {
       default: true,
     },
     allowOutsideClick: {
-      type: Boolean,
+      type: [Boolean, Function] as PropType<FocusTrapComponentProps['allowOutsideClick']>,
       default: true,
     },
     clickOutsideDeactivates: {
@@ -72,7 +72,11 @@ const FocusTrap: FocusTrapComponent = {
             this.$el,
             {
               escapeDeactivates: this.escapeDeactivates,
-              allowOutsideClick: () => this.allowOutsideClick,
+              allowOutsideClick: (e: MouseEvent) => (
+                typeof this.allowOutsideClick === 'function'
+                ? this.allowOutsideClick(e)
+                : this.allowOutsideClick
+              ),
               clickOutsideDeactivates: this.clickOutsideDeactivates,
               returnFocusOnDeactivate: this.returnFocusOnDeactivate,
               onActivate: () => {
