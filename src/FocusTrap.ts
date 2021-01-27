@@ -41,11 +41,8 @@ export const FocusTrap = defineComponent({
     },
   },
 
-    emits: {
-    'update:active': (value: boolean) => true,
-    'activate': () => true,
-    'deactivate': () => true
-  },
+  emits: ['update:active', 'activate', 'deactivate']
+
 
   setup(props, { slots, emit }) {
     let trap: FocusTrapI | null
