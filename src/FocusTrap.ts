@@ -40,7 +40,11 @@ export const FocusTrap = defineComponent({
       type: [String, Function] as PropType<string | (() => HTMLElement)>,
     },
   },
-
+  emits: {
+    'update:active': (value: boolean) => true,
+    'activate': () => true,
+    'deactivate': () => true
+  },
   setup(props, { slots, emit }) {
     let trap: FocusTrapI | null
     const el = ref<HTMLElement | null>(null)
