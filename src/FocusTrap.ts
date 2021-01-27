@@ -41,6 +41,8 @@ export const FocusTrap = defineComponent({
     },
   },
 
+  emits: ['update:active', 'activate', 'deactivate']
+
   setup(props, { slots, emit }) {
     let trap: FocusTrapI | null
     const el = ref<HTMLElement | null>(null)
