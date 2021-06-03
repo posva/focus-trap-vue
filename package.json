@@ -19,7 +19,7 @@
     "dev": "vite serve",
     "start": "vite serve --mode production",
     "demo:build": "vite build",
-    "cy:run": "cypress open",
+    "cy:run": "cypress run",
     "test:e2e": "start-server-and-test start http-get://localhost:3000 cy:run",
     "build:dts": "api-extractor run --local --verbose",
     "release": "bash scripts/release.sh",
