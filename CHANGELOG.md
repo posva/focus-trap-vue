@@ -1,3 +1,11 @@
+# [3.2.0](https://github.com/posva/focus-trap-vue/compare/v3.1.0...v3.2.0) (2021-06-03)
+
+Upgrade all dependencies
+
+### Features
+
+- **types:** emits option in FocusTrap ([#330](https://github.com/posva/focus-trap-vue/issues/330)) ([986d3e5](https://github.com/posva/focus-trap-vue/commit/986d3e57cd0f25b81ca18ab811d45729b8856a98))
+
 # [3.1.0](https://github.com/posva/focus-trap-vue/compare/v3.0.2...v3.1.0) (2020-10-22)
 
 ### Features
