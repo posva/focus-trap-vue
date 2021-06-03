@@ -1,12 +1,19 @@
-const path = require('path')
+import path from 'path'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
-module.exports = {
+export default defineConfig({
   root: 'demo',
-  outDir: 'demo_dist',
-  alias: {
-    '/@/': path.resolve(__dirname, 'src'),
+  build: {
+    outDir: 'demo_dist',
+  },
+  resolve: {
+    alias: {
+      '/@/': path.resolve(__dirname, 'src'),
+    },
   },
   optimizeDeps: {
     include: ['focus-trap'],
   },
-}
+  plugins: [vue()],
+})
