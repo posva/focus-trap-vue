@@ -1,16 +1,19 @@
 /// <reference types="Cypress" />
+
 function assertDeactivatedTrap(id) {
   cy.focused()
     .should('not.have.class', 'trap')
     .get(`${id} .trap`)
     .should('not.have.class', 'is-active')
 }
+
 function activateTrapWithButton(id) {
   cy.get(`${id} .trap`)
     .should('not.have.class', 'is-active')
     .get(`${id} > p > button`)
     .click()
 }
+
 function assertActivatedTrap(id) {
   cy.get(`${id} .trap`).should('have.class', 'is-active')
 }
@@ -28,6 +31,7 @@ describe('focus trap vue', () => {
 
       assertDeactivatedTrap('#basic')
     })
+
     it('can escape the trap by using the button', () => {
       activateTrapWithButton('#basic')
       assertActivatedTrap('#basic')
@@ -45,7 +49,7 @@ describe('focus trap vue', () => {
 
   describe('With Transitioning Element', () => {
     it('should activate/deactivate trap', () => {
-      activateTrapWithButton('#vif')
+      cy.get(`#vif .trap`).should('not.exist').get(`#vif > p > button`).click()
       assertActivatedTrap('#vif')
       cy.get(`#vif > p > button`)
         .click()
@@ -53,7 +57,10 @@ describe('focus trap vue', () => {
         .should('have.class', 'is-active')
         .get(`#vif .trap button`)
         .click()
-      assertDeactivatedTrap('#vif')
+      cy.focused()
+        .should('not.have.class', 'trap')
+        .get(`#vif .trap`)
+        .should('not.exist')
     })
   })
 
@@ -72,6 +79,7 @@ describe('focus trap vue', () => {
         .click()
       assertDeactivatedTrap('#iene')
     })
+
     it('should prevent escape', () => {
       activateTrapWithButton('#iene')
       assertActivatedTrap('#iene')
