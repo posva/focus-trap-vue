@@ -23,13 +23,13 @@ Vue.component('FocusTrap', FocusTrap)
 `FocusTrap` can be controlled in three different ways:
 
 - by using the `active` _Boolean_ prop
-- by using `v-model` (uses the `active` prop)
+- by using `v-model:active` (uses the `active` prop)
 - by calling the `activate`/`deactivate` method on the component
 
-The recommended approach is using `v-model` and it should contain **one single child**:
+The recommended approach is using `v-model:active` and it should contain **one single child**:
 
 ```html
-<focus-trap v-model="isActive">
+<focus-trap v-model:active="isActive">
   <modal-dialog tabindex="-1">
     <p>
       Do you accept the cookies?
@@ -48,7 +48,7 @@ the user can interact with. For example, an input. It's a good practice to
 always focus an interactable element instead of the modal container:
 
 ```html
-<focus-trap v-model="isActive" :initial-focus="() => $refs.nameInput">
+<focus-trap v-model:active="isActive" :initial-focus="() => $refs.nameInput">
   <modal-dialog>
     <p>
       What name do you want to use?
@@ -90,7 +90,7 @@ documentation to know what they do.
 
 ### Methods
 
-`FocusTrap` can be used without `v-model`. In that case, you will use the
+`FocusTrap` can be used without `v-model:active`. In that case, you will use the
 methods and _probably_ need to initialize the trap as _deactivated_, otherwise,
 the focus will start as active:
 
