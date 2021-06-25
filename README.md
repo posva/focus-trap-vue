@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install focus-trap focus-trap-vue
+npm install focus-trap focus-trap-vue@3
 ```
 
 ## Usage
