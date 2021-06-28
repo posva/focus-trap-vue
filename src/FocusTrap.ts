@@ -60,9 +60,9 @@ export const FocusTrap = defineComponent({
             // has no effect if already activated
             trap = createFocusTrap(el.value, {
               escapeDeactivates: props.escapeDeactivates,
-              allowOutsideClick: (e: MouseEvent | TouchEvent) =>
+              allowOutsideClick: event =>
                 typeof props.allowOutsideClick === 'function'
-                  ? props.allowOutsideClick(e)
+                  ? props.allowOutsideClick(event)
                   : props.allowOutsideClick,
               returnFocusOnDeactivate: props.returnFocusOnDeactivate,
               clickOutsideDeactivates: props.clickOutsideDeactivates,
