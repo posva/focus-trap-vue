@@ -8,7 +8,11 @@ import {
   PropType,
   Comment,
 } from 'vue'
-import { createFocusTrap, FocusTrap as FocusTrapI } from 'focus-trap'
+import {
+  createFocusTrap,
+  FocusTrap as FocusTrapI,
+  MouseEventToBoolean,
+} from 'focus-trap'
 
 export const FocusTrap = defineComponent({
   props: {
@@ -26,7 +30,7 @@ export const FocusTrap = defineComponent({
       default: true,
     },
     allowOutsideClick: {
-      type: Boolean,
+      type: [Boolean, Function] as PropType<boolean | MouseEventToBoolean>,
       default: true,
     },
     clickOutsideDeactivates: {
@@ -56,7 +60,10 @@ export const FocusTrap = defineComponent({
             // has no effect if already activated
             trap = createFocusTrap(el.value, {
               escapeDeactivates: props.escapeDeactivates,
-              allowOutsideClick: () => props.allowOutsideClick,
+              allowOutsideClick: event =>
+                typeof props.allowOutsideClick === 'function'
+                  ? props.allowOutsideClick(event)
+                  : props.allowOutsideClick,
               returnFocusOnDeactivate: props.returnFocusOnDeactivate,
               clickOutsideDeactivates: props.clickOutsideDeactivates,
               onActivate: () => {

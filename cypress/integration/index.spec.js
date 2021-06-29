@@ -11,6 +11,7 @@ function activateTrapWithButton(id) {
   cy.get(`${id} .trap`)
     .should('not.have.class', 'is-active')
     .get(`${id} > p > button`)
+    .first()
     .click()
 }
 
@@ -92,8 +93,30 @@ describe('focus trap vue', () => {
     it('can escape the trap by clicking outside of the bounds of the focus trap', () => {
       activateTrapWithButton('#ocd')
       assertActivatedTrap('#ocd')
-      cy.get('body').click()
+      // force is needed because the vertical center of the body may not be
+      // visible and click always tries to click on the middle of an element
+      cy.get('body').click({ force: true })
       assertDeactivatedTrap('#ocd')
+    })
+  })
+
+  describe('conditionally allowing outside clicks', () => {
+    it('does not allow outside clicks when toggled off', () => {
+      activateTrapWithButton('#aoc')
+      assertActivatedTrap('#aoc')
+
+      activateTrapWithButton('#basic')
+      assertActivatedTrap('#aoc')
+    })
+
+    it('allows outside clicks when toggled on', () => {
+      cy.get('#aoc > p input[type="checkbox"]').check()
+
+      activateTrapWithButton('#aoc')
+      assertActivatedTrap('#aoc')
+
+      activateTrapWithButton('#basic')
+      assertActivatedTrap('#basic')
     })
   })
 })

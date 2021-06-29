@@ -175,6 +175,55 @@
         </div>
       </focus-trap>
     </section>
+
+    <section id="aoc">
+      <h2 id="aoc-heading">allow outside click</h2>
+      <p>
+        A callback function can be used to determine whether or not you
+        should be allowed to click outside of the focus trap when it's
+        deactivated.
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" v-model="demos.aoc.clickOutsideEnabled">
+          Enable outside clicking
+        </label>
+      </p>
+      <p>
+        <button @click="demos.aoc.isActive = true">
+          activate trap
+        </button>
+      </p>
+
+      <focus-trap
+        v-model:active="demos.aoc.isActive"
+        :initial-focus="demos.aoc.initialFocus"
+        :allow-outside-click="demos.aoc.allowOutsideClick"
+      >
+        <div class="trap" :class="demos.aoc.isActive && 'is-active'">
+          <p>
+            Here is a focus trap <a href="#">with</a> <a href="#">some</a>
+            <a href="#">focusable</a> parts.
+          </p>
+          <p>
+            <label class="inline-label">
+              Initially focused input
+              <input ref="ocdInput" />
+            </label>
+          </p>
+          <p>
+            <button @click="demos.aoc.isActive = false">
+              deactivate trap
+            </button>
+          </p>
+        </div>
+      </focus-trap>
+      <p>
+        <button @click="handleClickFromAOC">
+          Try clicking me after activating the focus trap!
+        </button>
+      </p>
+    </section>
   </div>
 </template>
 
@@ -199,9 +248,23 @@ export default {
         ocd: {
           isActive: false,
         },
+        aoc: {
+          isActive: false,
+          clickOutsideEnabled: false,
+          allowOutsideClick: () =>  this.demos.aoc.clickOutsideEnabled
+        }
       },
     }
   },
+  methods: {
+    handleClickFromAOC() {
+      if (this.demos.aoc.isActive) {
+        alert("Successfully clicked outside of FocusTrap")
+      } else {
+        alert("Active the FocusTrap first to see that you can allow clicks to escape conditionally")
+      }
+    }
+  }
 }
 </script>
 
