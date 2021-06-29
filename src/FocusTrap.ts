@@ -10,6 +10,7 @@ import {
 } from 'vue'
 import {
   createFocusTrap,
+  FocusTarget,
   FocusTrap as FocusTrapI,
   MouseEventToBoolean,
 } from 'focus-trap'
@@ -38,7 +39,7 @@ export const FocusTrap = defineComponent({
       default: false,
     },
     initialFocus: {
-      type: [String, Function] as PropType<string | (() => HTMLElement)>,
+      type: [String, Function] as PropType<FocusTarget>,
     },
     fallbackFocus: {
       type: [String, Function] as PropType<string | (() => HTMLElement)>,
@@ -47,40 +48,50 @@ export const FocusTrap = defineComponent({
 
   emits: ['update:active', 'activate', 'deactivate'],
 
-  setup(props, { slots, emit }) {
+  setup(props, { slots, emit, expose }) {
     let trap: FocusTrapI | null
     const el = ref<HTMLElement | null>(null)
+
+    const ensureTrap = () => {
+      if (trap) {
+        return
+      }
+
+      const { initialFocus } = props
+      trap = createFocusTrap(el.value as HTMLElement, {
+        escapeDeactivates: props.escapeDeactivates,
+        allowOutsideClick: event =>
+          typeof props.allowOutsideClick === 'function'
+            ? props.allowOutsideClick(event)
+            : props.allowOutsideClick,
+        returnFocusOnDeactivate: props.returnFocusOnDeactivate,
+        clickOutsideDeactivates: props.clickOutsideDeactivates,
+        onActivate: () => {
+          emit('update:active', true)
+          emit('activate')
+        },
+        onDeactivate: () => {
+          emit('update:active', false)
+          emit('deactivate')
+        },
+        initialFocus: initialFocus
+          ? typeof initialFocus === 'function'
+            ? initialFocus()
+            : initialFocus
+          : (el.value as HTMLElement),
+        fallbackFocus: props.fallbackFocus,
+      })
+    }
 
     onMounted(() => {
       watch(
         () => props.active,
         active => {
-          const { initialFocus } = props
           if (active && el.value) {
             // has no effect if already activated
-            trap = createFocusTrap(el.value, {
-              escapeDeactivates: props.escapeDeactivates,
-              allowOutsideClick: event =>
-                typeof props.allowOutsideClick === 'function'
-                  ? props.allowOutsideClick(event)
-                  : props.allowOutsideClick,
-              returnFocusOnDeactivate: props.returnFocusOnDeactivate,
-              clickOutsideDeactivates: props.clickOutsideDeactivates,
-              onActivate: () => {
-                emit('update:active', true)
-                emit('activate')
-              },
-              onDeactivate: () => {
-                emit('update:active', false)
-                emit('deactivate')
-              },
-              initialFocus: initialFocus
-                ? typeof initialFocus === 'function'
-                  ? initialFocus()
-                  : initialFocus
-                : el.value,
-              fallbackFocus: props.fallbackFocus,
-            })
+            ensureTrap()
+
+            // @ts-ignore
             trap.activate()
           } else if (trap) {
             trap.deactivate()
@@ -93,6 +104,17 @@ export const FocusTrap = defineComponent({
     onUnmounted(() => {
       if (trap) trap.deactivate()
       trap = null
+    })
+
+    expose({
+      activate() {
+        ensureTrap()
+        // @ts-ignore
+        trap.activate()
+      },
+      deactivate() {
+        trap && trap.deactivate()
+      },
     })
 
     return () => {

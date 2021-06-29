@@ -224,6 +224,41 @@
         </button>
       </p>
     </section>
+
+    <section id="methods">
+      <h2 id="methods-heading">exposed methods</h2>
+      <p>
+        Uses the methods exposed by the component (via $refs attachment) to activate and deactivate the focus trap
+      </p>
+      <p>
+        <button @click="() => $refs.methodsFocusTrap.activate()">activate trap</button>
+      </p>
+
+      <focus-trap
+        ref="methodsFocusTrap"
+        v-model:active="demos.methods.isActive"
+      >
+        <div class="trap" :class="demos.methods.isActive && 'is-active'">
+          <p>
+            Here is a focus trap
+            <a href="#">with</a>
+            <a href="#">some</a>
+            <a href="#">focusable</a> parts.
+          </p>
+          <p>
+            <label class="inline-label">
+              Initially focused input
+              <input ref="ieneInput" />
+            </label>
+          </p>
+          <p>
+            <button @click="() => $refs.methodsFocusTrap.deactivate()">
+              deactivate trap via method call
+            </button>
+          </p>
+        </div>
+      </focus-trap>
+    </section>
   </div>
 </template>
 
@@ -252,6 +287,9 @@ export default {
           isActive: false,
           clickOutsideEnabled: false,
           allowOutsideClick: () =>  this.demos.aoc.clickOutsideEnabled
+        },
+        methods: {
+          isActive: false,
         }
       },
     }

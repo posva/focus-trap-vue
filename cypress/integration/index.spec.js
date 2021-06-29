@@ -15,6 +15,14 @@ function activateTrapWithButton(id) {
     .click()
 }
 
+function deactivateTrapWithButton(id) {
+  cy.get(`${id} .trap`)
+    .should('have.class', 'is-active')
+    .get(`${id} .trap > p > button`)
+    .first()
+    .click()
+}
+
 function assertActivatedTrap(id) {
   cy.get(`${id} .trap`).should('have.class', 'is-active')
 }
@@ -117,6 +125,16 @@ describe('focus trap vue', () => {
 
       activateTrapWithButton('#basic')
       assertActivatedTrap('#basic')
+    })
+  })
+
+  describe('method control of focus trap', () => {
+    it('allows control of trap via exposed methods', () => {
+      activateTrapWithButton('#methods')
+      assertActivatedTrap('#methods')
+
+      deactivateTrapWithButton('#methods')
+      assertDeactivatedTrap('#methods')
     })
   })
 })
