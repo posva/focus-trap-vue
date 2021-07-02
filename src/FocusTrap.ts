@@ -48,7 +48,11 @@ export const FocusTrap = defineComponent({
 
   emits: ['update:active', 'activate', 'deactivate'],
 
-  setup(props, { slots, emit, expose }) {
+  render() {
+    return this.renderImpl()
+  },
+
+  setup(props, { slots, emit }) {
     let trap: FocusTrapI | null
     const el = ref<HTMLElement | null>(null)
 
@@ -106,7 +110,15 @@ export const FocusTrap = defineComponent({
       trap = null
     })
 
-    expose({
+    // Use object-return for setup so that we can expose the 'activate'
+    // and 'deactivate' methods without making use of the 'expose({ ... })'
+    // method as the ExposeProxy system is problematic for users migrating
+    // from Vue2 -> Vue3 due to the ExposeProxy (correctly) preventing child
+    // components from reading the internal state of their $parent. This is
+    // problematic for migrating users because the the Vue2-based VueRouter
+    // _requires_ that functionality as it does $parent._routerRoot to set
+    // the $router and $route properties on components.
+    return {
       activate() {
         ensureTrap()
         // @ts-ignore
@@ -115,23 +127,22 @@ export const FocusTrap = defineComponent({
       deactivate() {
         trap && trap.deactivate()
       },
-    })
+      renderImpl() {
+        if (!slots.default) return null
 
-    return () => {
-      if (!slots.default) return null
+        const vNodes = slots.default().filter(vnode => vnode.type !== Comment)
+        if (!vNodes || !vNodes.length || vNodes.length > 1) {
+          if (__DEV__) {
+            console.error(
+              '[focus-trap-vue]: FocusTrap requires exactly one child.'
+            )
+          }
 
-      const vNodes = slots.default().filter(vnode => vnode.type !== Comment)
-      if (!vNodes || !vNodes.length || vNodes.length > 1) {
-        if (__DEV__) {
-          console.error(
-            '[focus-trap-vue]: FocusTrap requires exactly one child.'
-          )
+          return vNodes
         }
-
-        return vNodes
-      }
-      const vnode = cloneVNode(vNodes[0], { ref: el })
-      return vnode
+        const vnode = cloneVNode(vNodes[0], { ref: el })
+        return vnode
+      },
     }
   },
 })
