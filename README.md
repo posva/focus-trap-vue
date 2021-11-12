@@ -4,8 +4,16 @@
 
 ## Installation
 
+### For Vue 2
+
 ```sh
-npm install focus-trap focus-trap-vue@3
+npm install focus-trap focus-trap-vue
+```
+
+###  For Vue 3
+
+```sh
+npm install focus-trap focus-trap-vue@next
 ```
 
 ## Usage
@@ -14,16 +22,28 @@ This library exports one single named export `FocusTrap` and **requires
 [`focus-trap`](https://github.com/davidtheclark/focus-trap) as a peer
 dependency**. So you can locally import the component or declare it globally:
 
+###  Register globally in a Vue 2 app
+
 ```js
 import { FocusTrap } from 'focus-trap-vue'
 
 Vue.component('FocusTrap', FocusTrap)
 ```
 
+###  Register globally in a Vue 3 app
+
+```js
+import { FocusTrap } from 'focus-trap-vue'
+
+createApp(App)
+  .component('FocusTrap', FocusTrap)
+  .mount('#app)
+```
+
 `FocusTrap` can be controlled in three different ways:
 
 - by using the `active` _Boolean_ prop
-- by using `v-model:active` (uses the `active` prop)
+- by using `v-model:active` (uses the `active` prop, *Vue 3 only*)
 - by calling the `activate`/`deactivate` method on the component
 
 The recommended approach is using `v-model:active` and it should contain **one single child**:
@@ -110,7 +130,7 @@ Note the use of arrow functions, this is necessary because we are accessing
 
 ## Related
 
-- Focus Trap: https://github.com/davidtheclark/focus-trap
+- Focus Trap: <https://github.com/davidtheclark/focus-trap>
 
 ## License
 
