@@ -259,14 +259,35 @@
         </div>
       </focus-trap>
     </section>
+
+    <section id="vue-components">
+      <h2 id="vue-components-heading">Wrapping Vue Components</h2>
+
+      <p>
+        <button @click="demos.vueComponents.isActive = true">activate trap</button>
+      </p>
+
+      <focus-trap v-model:active="demos.vueComponents.isActive">
+        <my-component
+          class="trap"
+          :class="demos.vueComponents.isActive && 'is-active'"
+          tabindex="-1"
+        >
+          <p>
+            <button @click="demos.vueComponents.isActive = false">deactivate trap</button>
+          </p>
+        </my-component>
+      </focus-trap>
+    </section>
   </div>
 </template>
 
 <script>
 import { FocusTrap } from '/@/'
+import MyComponent from './components/MyComponent.vue'
 
 export default {
-  components: { FocusTrap },
+  components: { FocusTrap, MyComponent },
   data() {
     return {
       demos: {
@@ -290,7 +311,10 @@ export default {
         },
         methods: {
           isActive: false,
-        }
+        },
+        vueComponents: {
+          isActive: false,
+        },
       },
     }
   },

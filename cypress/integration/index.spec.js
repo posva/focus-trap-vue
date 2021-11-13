@@ -54,6 +54,14 @@ describe('focus trap vue', () => {
 
       assertDeactivatedTrap('#basic')
     })
+
+    it('works with vue components', () => {
+      activateTrapWithButton('#vue-components')
+      assertActivatedTrap('#vue-components')
+      cy.focused().should('have.class', 'trap').type('{esc}')
+
+      assertDeactivatedTrap('#vue-components')
+    })
   })
 
   describe('With Transitioning Element', () => {
