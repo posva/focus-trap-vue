@@ -7,6 +7,7 @@ import {
   onUnmounted,
   PropType,
   Comment,
+  ComponentPublicInstance,
 } from 'vue'
 import {
   createFocusTrap,
@@ -54,11 +55,23 @@ export const FocusTrap = defineComponent({
 
   setup(props, { slots, emit }) {
     let trap: FocusTrapI | null
-    const el = ref<HTMLElement | null>(null)
+    const el = ref<HTMLElement | ComponentPublicInstance | null>(null)
 
     const ensureTrap = () => {
       if (trap) {
         return
+      }
+
+      if (el === null || el?.value === null) {
+        throw new Error(
+          '[focus-trap-vue] FocusTrap requires exactly one child.'
+        )
+      }
+
+      if (!(el.value instanceof HTMLElement) && Reflect.has(el.value, '$el')) {
+        if (Reflect.get(el.value, '$el') instanceof HTMLElement) {
+          el.value = (el.value as ComponentPublicInstance).$el
+        }
       }
 
       const { initialFocus } = props
