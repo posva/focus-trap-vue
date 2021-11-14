@@ -40,6 +40,8 @@ createApp(App)
   .mount('#app)
 ```
 
+**Note this documentation is for Vue 3 and some props/events might not exist in the Vue 2 version**
+
 `FocusTrap` can be controlled in three different ways:
 
 - by using the `active` _Boolean_ prop
@@ -130,7 +132,7 @@ Note the use of arrow functions, this is necessary because we are accessing
 
 ## Related
 
-- Focus Trap: <https://github.com/davidtheclark/focus-trap>
+- Focus Trap: https://github.com/davidtheclark/focus-trap
 
 ## License
 
