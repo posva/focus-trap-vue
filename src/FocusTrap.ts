@@ -10,7 +10,7 @@ import {
 } from 'vue'
 import {
   createFocusTrap,
-  FocusTarget,
+  FocusTargetOrFalse,
   FocusTrap as FocusTrapI,
   MouseEventToBoolean,
 } from 'focus-trap'
@@ -39,7 +39,7 @@ export const FocusTrap = defineComponent({
       default: false,
     },
     initialFocus: {
-      type: [String, Function] as PropType<FocusTarget>,
+      type: [String, Function, Boolean] as PropType<FocusTargetOrFalse>,
     },
     fallbackFocus: {
       type: [String, Function] as PropType<string | (() => HTMLElement)>,
