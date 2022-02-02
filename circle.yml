@@ -8,3 +8,4 @@ workflows:
           start: yarn run start
           yarn: true
           browser: chrome
+          executor: cypress/base-14
