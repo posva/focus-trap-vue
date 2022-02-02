@@ -29,7 +29,7 @@ function assertActivatedTrap(id) {
 
 describe('focus trap vue', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:4200')
   })
 
   describe('default behavior', () => {
