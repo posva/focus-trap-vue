@@ -7,5 +7,4 @@ workflows:
       - cypress/run:
           start: yarn run start
           yarn: true
-          browser: chrome
-          executor: cypress/base-14
+          executor: cypress/browsers-chrome78-ff70
