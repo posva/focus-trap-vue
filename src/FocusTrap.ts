@@ -7,44 +7,66 @@ import {
   onUnmounted,
   PropType,
   Comment,
+  Prop,
 } from 'vue'
-import {
-  createFocusTrap,
-  FocusTargetOrFalse,
-  FocusTrap as FocusTrapI,
-  MouseEventToBoolean,
-} from 'focus-trap'
+import { createFocusTrap, FocusTrap as FocusTrapI, Options } from 'focus-trap'
+
+function defineFocusTrapProps<
+  T extends {
+    [K in keyof Options]: Prop<Options[K]>
+  }
+>(props: T): T {
+  return props
+}
+
+const FocusTrapProps = defineFocusTrapProps({
+  escapeDeactivates: {
+    type: Boolean,
+    default: true,
+  },
+  returnFocusOnDeactivate: {
+    type: Boolean,
+    default: true,
+  },
+  allowOutsideClick: {
+    type: [Boolean, Function] as PropType<Options['allowOutsideClick']>,
+    default: true,
+  },
+
+  clickOutsideDeactivates: Boolean,
+
+  initialFocus: [String, Function, Boolean] as PropType<
+    Options['initialFocus']
+  >,
+
+  fallbackFocus: [String, Function] as PropType<Options['fallbackFocus']>,
+
+  checkCanFocusTrap: Function as PropType<Options['checkCanFocusTrap']>,
+
+  checkCanReturnFocus: Function as PropType<Options['checkCanReturnFocus']>,
+
+  delayInitialFocus: { type: Boolean, default: true },
+
+  document: Object as PropType<Options['document']>,
+
+  preventScroll: Boolean,
+
+  setReturnFocus: [Object, String, Boolean, Function] as PropType<
+    Options['setReturnFocus']
+  >,
+})
 
 export const FocusTrap = defineComponent({
-  props: {
-    active: {
-      // TODO: could be options for activate
-      type: Boolean,
-      default: true,
+  props: Object.assign(
+    {
+      active: {
+        // TODO: could be options for activate
+        type: Boolean,
+        default: true,
+      },
     },
-    escapeDeactivates: {
-      type: Boolean,
-      default: true,
-    },
-    returnFocusOnDeactivate: {
-      type: Boolean,
-      default: true,
-    },
-    allowOutsideClick: {
-      type: [Boolean, Function] as PropType<boolean | MouseEventToBoolean>,
-      default: true,
-    },
-    clickOutsideDeactivates: {
-      type: Boolean,
-      default: false,
-    },
-    initialFocus: {
-      type: [String, Function, Boolean] as PropType<FocusTargetOrFalse>,
-    },
-    fallbackFocus: {
-      type: [String, Function] as PropType<string | (() => HTMLElement)>,
-    },
-  },
+    FocusTrapProps
+  ),
 
   emits: ['update:active', 'activate', 'deactivate'],
 
@@ -61,13 +83,9 @@ export const FocusTrap = defineComponent({
         return
       }
 
-      const { initialFocus } = props
       trap = createFocusTrap(el.value as HTMLElement, {
         escapeDeactivates: props.escapeDeactivates,
-        allowOutsideClick: event =>
-          typeof props.allowOutsideClick === 'function'
-            ? props.allowOutsideClick(event)
-            : props.allowOutsideClick,
+        allowOutsideClick: props.allowOutsideClick,
         returnFocusOnDeactivate: props.returnFocusOnDeactivate,
         clickOutsideDeactivates: props.clickOutsideDeactivates,
         onActivate: () => {
@@ -78,11 +96,7 @@ export const FocusTrap = defineComponent({
           emit('update:active', false)
           emit('deactivate')
         },
-        initialFocus: initialFocus
-          ? typeof initialFocus === 'function'
-            ? initialFocus()
-            : initialFocus
-          : (el.value as HTMLElement),
+        initialFocus: props.initialFocus,
         fallbackFocus: props.fallbackFocus,
       })
     }
