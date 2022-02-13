@@ -5,6 +5,7 @@ import {
   ref,
   cloneVNode,
   onUnmounted,
+  computed,
   PropType,
   Comment,
   ComponentPublicInstance,
@@ -77,26 +78,30 @@ export const FocusTrap = defineComponent({
 
   setup(props, { slots, emit }) {
     let trap: FocusTrapI | null
-    const el = ref<HTMLElement | ComponentPublicInstance | null>(null)
+    const wrapperElement = ref<
+      HTMLElement | ComponentPublicInstance | undefined
+    >()
+    const el = computed<HTMLElement>(() => {
+      if (!wrapperElement.value) return undefined
+
+      if (
+        !(wrapperElement.value instanceof HTMLElement) &&
+        wrapperElement.value?.$el
+      ) {
+        return (wrapperElement.value as ComponentPublicInstance).$el
+      } else if (wrapperElement.value instanceof HTMLElement) {
+        return wrapperElement.value
+      }
+      return undefined
+    })
 
     const ensureTrap = () => {
       if (trap) {
         return
       }
 
-      if (el === null || el?.value === null) {
-        throw new Error(
-          '[focus-trap-vue] FocusTrap requires exactly one child.'
-        )
-      }
-
-      if (!(el.value instanceof HTMLElement) && Reflect.has(el.value, '$el')) {
-        if (Reflect.get(el.value, '$el') instanceof HTMLElement) {
-          el.value = (el.value as ComponentPublicInstance).$el
-        }
-      }
-
-      trap = createFocusTrap(el.value as HTMLElement, {
+      const { initialFocus } = props
+      trap = createFocusTrap(el.value, {
         escapeDeactivates: props.escapeDeactivates,
         allowOutsideClick: props.allowOutsideClick,
         returnFocusOnDeactivate: props.returnFocusOnDeactivate,
@@ -118,7 +123,7 @@ export const FocusTrap = defineComponent({
       watch(
         () => props.active,
         active => {
-          if (active && el.value) {
+          if (active && wrapperElement.value) {
             // has no effect if already activated
             ensureTrap()
 
@@ -167,7 +172,7 @@ export const FocusTrap = defineComponent({
 
           return vNodes
         }
-        const vnode = cloneVNode(vNodes[0], { ref: el })
+        const vnode = cloneVNode(vNodes[0], { ref: wrapperElement })
         return vnode
       },
     }
