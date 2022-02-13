@@ -114,7 +114,11 @@ export const FocusTrap = defineComponent({
           emit('update:active', false)
           emit('deactivate')
         },
-        initialFocus: props.initialFocus,
+        initialFocus: initialFocus
+          ? typeof initialFocus === 'function'
+            ? initialFocus()
+            : initialFocus
+          : el.value,
         fallbackFocus: props.fallbackFocus,
       })
     }
