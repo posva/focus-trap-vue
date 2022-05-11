@@ -54,10 +54,31 @@ describe('focus trap vue', () => {
 
       assertDeactivatedTrap('#basic')
     })
+
+    it('works with vue components', () => {
+      activateTrapWithButton('#vue-components')
+      assertActivatedTrap('#vue-components')
+      cy.focused().type('{esc}')
+
+      assertDeactivatedTrap('#vue-components')
+    })
   })
 
   describe('With Transitioning Element', () => {
     it('should activate/deactivate trap', () => {
+      cy.get(`#vif .trap`).should('not.exist').get(`#vif > p > button`).click()
+      assertActivatedTrap('#vif')
+      cy.get(`#vif > p > button`)
+        .click()
+        .get(`#vif .trap`)
+        .should('have.class', 'is-active')
+        .get(`#vif .trap button`)
+        .click()
+      cy.focused()
+        .should('not.have.class', 'trap')
+        .get(`#vif .trap`)
+        .should('not.exist')
+      // do it twice
       cy.get(`#vif .trap`).should('not.exist').get(`#vif > p > button`).click()
       assertActivatedTrap('#vif')
       cy.get(`#vif > p > button`)

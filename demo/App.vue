@@ -250,54 +250,74 @@
         </div>
       </focus-trap>
     </section>
+
+    <section id="vue-components">
+      <h2>Wrapping Vue Components</h2>
+
+      <p>
+        <button @click="demos.comp.isActive = true">activate trap</button>
+      </p>
+
+      <focus-trap v-model:active="demos.comp.isActive">
+        <SampleComponent
+          class="trap"
+          :class="demos.comp.isActive && 'is-active'"
+          tabindex="-1"
+        >
+          <p>
+            <button @click="demos.comp.isActive = false">
+              deactivate trap
+            </button>
+          </p>
+        </SampleComponent>
+      </focus-trap>
+    </section>
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-import { FocusTrap } from '/@/'
+<script lang="ts" setup>
+import { reactive, ref } from 'vue'
+import { FocusTrap } from '../src'
+import SampleComponent from './components/SampleComponent.vue'
 
-export default defineComponent({
-  components: { FocusTrap },
-  data() {
-    return {
-      demos: {
-        basic: {
-          isActive: false,
-        },
-        vif: {
-          isActive: false,
-        },
-        iene: {
-          initialFocus: () => this.$refs.ieneInput,
-          isActive: false,
-        },
-        ocd: {
-          isActive: false,
-        },
-        aoc: {
-          isActive: false,
-          clickOutsideEnabled: false,
-          allowOutsideClick: () => this.demos.aoc.clickOutsideEnabled,
-        },
-        methods: {
-          isActive: false,
-        },
-      },
-    }
+const ieneInput = ref<HTMLInputElement>()
+
+const demos = reactive({
+  basic: {
+    isActive: false,
+  },
+  vif: {
+    isActive: false,
+  },
+  iene: {
+    initialFocus: () => ieneInput.value,
+    isActive: false,
+  },
+  ocd: {
+    isActive: false,
+  },
+  aoc: {
+    isActive: false,
+    clickOutsideEnabled: false,
+    allowOutsideClick: () => demos.aoc.clickOutsideEnabled,
   },
   methods: {
-    handleClickFromAOC() {
-      if (this.demos.aoc.isActive) {
-        alert('Successfully clicked outside of FocusTrap')
-      } else {
-        alert(
-          'Active the FocusTrap first to see that you can allow clicks to escape conditionally'
-        )
-      }
-    },
+    isActive: false,
+  },
+  comp: {
+    isActive: false,
   },
 })
+
+function handleClickFromAOC() {
+  if (demos.aoc.isActive) {
+    alert('Successfully clicked outside of FocusTrap')
+  } else {
+    alert(
+      'Active the FocusTrap first to see that you can allow clicks to escape conditionally'
+    )
+  }
+}
 </script>
 
 <style>

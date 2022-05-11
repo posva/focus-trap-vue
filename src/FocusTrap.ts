@@ -8,6 +8,8 @@ import {
   PropType,
   Comment,
   Prop,
+  ComponentPublicInstance,
+  computed,
 } from 'vue'
 import { createFocusTrap, FocusTrap as FocusTrapI, Options } from 'focus-trap'
 
@@ -60,7 +62,7 @@ export const FocusTrap = defineComponent({
   props: Object.assign(
     {
       active: {
-        // TODO: could be options for activate
+        // TODO: could be options for activate but what about the options for deactivating?
         type: Boolean,
         default: true,
       },
@@ -82,14 +84,21 @@ export const FocusTrap = defineComponent({
 
   setup(props, { slots, emit }) {
     let trap: FocusTrapI | null
-    const el = ref<HTMLElement | null>(null)
+    const wrapperEl = ref<HTMLElement | ComponentPublicInstance | null>(null)
+    const el = computed<HTMLElement | null | undefined>(() => {
+      const innerElement = wrapperEl.value
+      return (
+        innerElement &&
+        (innerElement instanceof HTMLElement ? innerElement : innerElement.$el)
+      )
+    })
 
     const ensureTrap = () => {
       if (trap) {
-        return
+        return trap
       }
 
-      trap = createFocusTrap(el.value as HTMLElement, {
+      return (trap = createFocusTrap(el.value as HTMLElement, {
         escapeDeactivates: props.escapeDeactivates,
         allowOutsideClick: props.allowOutsideClick,
         returnFocusOnDeactivate: props.returnFocusOnDeactivate,
@@ -106,7 +115,7 @@ export const FocusTrap = defineComponent({
         onPostDeactivate: () => emit('postDeactivate'),
         initialFocus: props.initialFocus,
         fallbackFocus: props.fallbackFocus,
-      })
+      }))
     }
 
     onMounted(() => {
@@ -115,12 +124,14 @@ export const FocusTrap = defineComponent({
         active => {
           if (active && el.value) {
             // has no effect if already activated
-            ensureTrap()
-
-            // @ts-ignore
-            trap.activate()
+            ensureTrap().activate()
           } else if (trap) {
             trap.deactivate()
+            // this allows v-if blocks to work by invalidating the trap
+            // and forcing a new one to be created
+            if (!el.value || el.value.nodeType === Node.COMMENT_NODE) {
+              trap = null
+            }
           }
         },
         { immediate: true, flush: 'post' }
@@ -162,7 +173,7 @@ export const FocusTrap = defineComponent({
 
           return vNodes
         }
-        const vnode = cloneVNode(vNodes[0], { ref: el })
+        const vnode = cloneVNode(vNodes[0], { ref: wrapperEl })
         return vnode
       },
     }
