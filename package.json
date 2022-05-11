@@ -102,5 +102,6 @@
   "peerDependencies": {
     "focus-trap": "^6.7.0",
     "vue": "^3.0.0-rc.13"
-  }
+  },
+  "dependencies": {}
 }
