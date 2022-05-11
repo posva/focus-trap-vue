@@ -3,10 +3,10 @@
     <h1 tabindex="0">focus-trap demo</h1>
 
     <p>
-      <span style="font-size: 2em; vertical-align: middle;">☜</span>
+      <span style="font-size: 2em; vertical-align: middle">☜</span>
       <a
         href="https://github.com/posva/focus-trap-vue"
-        style="vertical-align: middle;"
+        style="vertical-align: middle"
         >Return to the repository</a
       >
     </p>
@@ -33,7 +33,6 @@
 
       <focus-trap v-model:active="demos.basic.isActive">
         <div
-          id="default"
           class="trap"
           :class="demos.basic.isActive && 'is-active'"
           tabindex="-1"
@@ -48,7 +47,9 @@
             <button
               id="deactivate-default"
               @click="demos.basic.isActive = false"
-            >deactivate trap</button>
+            >
+              deactivate trap
+            </button>
           </p>
         </div>
       </focus-trap>
@@ -57,41 +58,36 @@
     <section id="vif">
       <h2>With v-if (ie: transitioning component)</h2>
       <p>
-        <button
-          id="activate-default"
-          @click="demos.vif.isActive = true"
-        >activate trap</button>
+        <button id="activate-default" @click="demos.vif.isActive = true">
+          activate trap
+        </button>
       </p>
-        <focus-trap
-          v-model:active="demos.vif.isActive"
-        >
-          <transition
-            name="fade"
-            appear
+      <focus-trap v-model:active="demos.vif.isActive">
+        <transition name="fade" appear>
+          <div
+            class="trap"
+            v-if="demos.vif.isActive"
+            :class="demos.vif.isActive && 'is-active'"
+            tabindex="-1"
+            ref="vifContainer"
           >
-            <div
-              id="default"
-              class="trap"
-              v-if="demos.vif.isActive"
-              :class="demos.vif.isActive && 'is-active'"
-              tabindex="-1"
-              ref="vifContainer"
-            >
-              <p>
-                Here is a focus trap
-                <a href="#">with</a>
-                <a href="#">some</a>
-                <a href="#">focusable</a> parts.
-              </p>
-              <p>
-                <button
-                  id="deactivate-default"
-                  @click="demos.vif.isActive = false"
-                >deactivate trap</button>
-              </p>
-            </div>
-          </transition>
-        </focus-trap>
+            <p>
+              Here is a focus trap
+              <a href="#">with</a>
+              <a href="#">some</a>
+              <a href="#">focusable</a> parts.
+            </p>
+            <p>
+              <button
+                id="deactivate-default"
+                @click="demos.vif.isActive = false"
+              >
+                deactivate trap
+              </button>
+            </p>
+          </div>
+        </transition>
+      </focus-trap>
     </section>
 
     <section id="iene">
@@ -168,9 +164,7 @@
             </label>
           </p>
           <p>
-            <button @click="demos.ocd.isActive = false">
-              deactivate trap
-            </button>
+            <button @click="demos.ocd.isActive = false">deactivate trap</button>
           </p>
         </div>
       </focus-trap>
@@ -179,20 +173,17 @@
     <section id="aoc">
       <h2 id="aoc-heading">allow outside click</h2>
       <p>
-        A callback function can be used to determine whether or not you
-        should be allowed to click outside of the focus trap when it's
-        deactivated.
+        A callback function can be used to determine whether or not you should
+        be allowed to click outside of the focus trap when it's deactivated.
       </p>
       <p>
         <label>
-          <input type="checkbox" v-model="demos.aoc.clickOutsideEnabled">
+          <input type="checkbox" v-model="demos.aoc.clickOutsideEnabled" />
           Enable outside clicking
         </label>
       </p>
       <p>
-        <button @click="demos.aoc.isActive = true">
-          activate trap
-        </button>
+        <button @click="demos.aoc.isActive = true">activate trap</button>
       </p>
 
       <focus-trap
@@ -212,14 +203,12 @@
             </label>
           </p>
           <p>
-            <button @click="demos.aoc.isActive = false">
-              deactivate trap
-            </button>
+            <button @click="demos.aoc.isActive = false">deactivate trap</button>
           </p>
         </div>
       </focus-trap>
       <p>
-        <button @click="handleClickFromAOC">
+        <button id="aoc-outside-button" @click="handleClickFromAOC">
           Try clicking me after activating the focus trap!
         </button>
       </p>
@@ -228,10 +217,13 @@
     <section id="methods">
       <h2 id="methods-heading">exposed methods</h2>
       <p>
-        Uses the methods exposed by the component (via $refs attachment) to activate and deactivate the focus trap
+        Uses the methods exposed by the component (via $refs attachment) to
+        activate and deactivate the focus trap
       </p>
       <p>
-        <button @click="() => $refs.methodsFocusTrap.activate()">activate trap</button>
+        <button @click="() => $refs.methodsFocusTrap.activate()">
+          activate trap
+        </button>
       </p>
 
       <focus-trap
@@ -263,9 +255,10 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import { FocusTrap } from '/@/'
 
-export default {
+export default defineComponent({
   components: { FocusTrap },
   data() {
     return {
@@ -286,24 +279,26 @@ export default {
         aoc: {
           isActive: false,
           clickOutsideEnabled: false,
-          allowOutsideClick: () =>  this.demos.aoc.clickOutsideEnabled
+          allowOutsideClick: () => this.demos.aoc.clickOutsideEnabled,
         },
         methods: {
           isActive: false,
-        }
+        },
       },
     }
   },
   methods: {
     handleClickFromAOC() {
       if (this.demos.aoc.isActive) {
-        alert("Successfully clicked outside of FocusTrap")
+        alert('Successfully clicked outside of FocusTrap')
       } else {
-        alert("Active the FocusTrap first to see that you can allow clicks to escape conditionally")
+        alert(
+          'Active the FocusTrap first to see that you can allow clicks to escape conditionally'
+        )
       }
-    }
-  }
-}
+    },
+  },
+})
 </script>
 
 <style>
@@ -345,7 +340,7 @@ body {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 .fade-enter-from,
 .fade-leave-to {

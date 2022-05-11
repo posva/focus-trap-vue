@@ -36,7 +36,7 @@ describe('focus trap vue', () => {
     it('can escape the trap by pressing esc', () => {
       activateTrapWithButton('#basic')
       assertActivatedTrap('#basic')
-      cy.focused().should('have.class', 'trap').type('{esc}')
+      cy.get(`#basic`).type('{esc}')
 
       assertDeactivatedTrap('#basic')
     })
@@ -123,8 +123,14 @@ describe('focus trap vue', () => {
       activateTrapWithButton('#aoc')
       assertActivatedTrap('#aoc')
 
-      activateTrapWithButton('#basic')
-      assertActivatedTrap('#basic')
+      const stub = cy.stub()
+      cy.on('window:alert', stub)
+
+      cy.get('#aoc-outside-button')
+        .click()
+        .then(() => {
+          expect(stub).to.have.been.called
+        })
     })
   })
 
