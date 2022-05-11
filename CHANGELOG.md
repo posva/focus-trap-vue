@@ -1,3 +1,15 @@
+# [3.3.0](https://github.com/posva/focus-trap-vue/compare/v3.2.1...v3.3.0) (2022-05-11)
+
+### Bug Fixes
+
+- allow components as root ([18a184c](https://github.com/posva/focus-trap-vue/commit/18a184c2a58a57f1f1df9b9855c5c6bed69bdac0)), closes [#385](https://github.com/posva/focus-trap-vue/issues/385) [#387](https://github.com/posva/focus-trap-vue/issues/387)
+- **props:** Upgrade `focus-trap` to fix `initialFocus` prop types ([#390](https://github.com/posva/focus-trap-vue/issues/390)) ([1af880f](https://github.com/posva/focus-trap-vue/commit/1af880f6b9514d2296e54c430094c78a31925d80))
+
+### Features
+
+- add more events ([c445e51](https://github.com/posva/focus-trap-vue/commit/c445e514df2d28f4d5ae0d08fd100fc67e7dc592))
+- implement all focus-trap options ([8d7a4b4](https://github.com/posva/focus-trap-vue/commit/8d7a4b48e94c8b45d197d93f9172e709d1c65818)), closes [#384](https://github.com/posva/focus-trap-vue/issues/384) [#389](https://github.com/posva/focus-trap-vue/issues/389)
+
 ## [3.2.1](https://github.com/posva/focus-trap-vue/compare/v3.2.0...v3.2.1) (2021-07-07)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "focus-trap-vue",
-  "version": "3.2.1",
+  "version": "3.3.0",
   "description": "Vue component to trap the focus within a DOM element",
   "main": "dist/focus-trap-vue.cjs.js",
   "browser": "dist/focus-trap-vue.esm-browser.js",
