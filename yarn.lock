@@ -706,6 +706,11 @@ camelcase@^5.3.1:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
+camelcase@^6.2.1:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-6.3.0.tgz#5685b95eb209ac9c0c177467778c9c84df58ba9a"
+  integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
+
 caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
@@ -2588,10 +2593,12 @@ parse-json@^5.0.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
-pascalcase@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-1.0.0.tgz#d2fd7d73f2969606d2b56e17f5261be41c43c381"
-  integrity sha512-BSExi0rRnCHReJys6NocaK+cfTXNinAegfWBvr0JD3hiaEG7Nuc7r0CIdOJunXrs8gU/sbHQ9dxVAtiVQisjmg==
+pascalcase@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-2.0.0.tgz#13515fcbfa76eddff9282827f59f7868e3cc9250"
+  integrity sha512-DHpENy5Qm/FaX+x3iBLoMLG/XHNCTgL+yErm1TwuVaj6u4fiOSkYkf60vGtITk7hrKHOO4uCl9vRrD4hqjNKjg==
+  dependencies:
+    camelcase "^6.2.1"
 
 path-exists@^3.0.0:
   version "3.0.0"
