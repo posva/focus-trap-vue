@@ -68,7 +68,13 @@ export const FocusTrap = defineComponent({
     FocusTrapProps
   ),
 
-  emits: ['update:active', 'activate', 'deactivate'],
+  emits: [
+    'update:active',
+    'activate',
+    'postActivate',
+    'deactivate',
+    'postDeactivate',
+  ],
 
   render() {
     return this.renderImpl()
@@ -96,6 +102,8 @@ export const FocusTrap = defineComponent({
           emit('update:active', false)
           emit('deactivate')
         },
+        onPostActivate: () => emit('postActivate'),
+        onPostDeactivate: () => emit('postDeactivate'),
         initialFocus: props.initialFocus,
         fallbackFocus: props.fallbackFocus,
       })
