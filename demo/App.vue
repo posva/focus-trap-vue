@@ -188,7 +188,6 @@
 
       <focus-trap
         v-model:active="demos.aoc.isActive"
-        :initial-focus="demos.aoc.initialFocus"
         :allow-outside-click="demos.aoc.allowOutsideClick"
       >
         <div class="trap" :class="demos.aoc.isActive && 'is-active'">
@@ -198,7 +197,7 @@
           </p>
           <p>
             <label class="inline-label">
-              Initially focused input
+              Some input
               <input ref="ocdInput" />
             </label>
           </p>
@@ -239,7 +238,7 @@
           </p>
           <p>
             <label class="inline-label">
-              Initially focused input
+              Some input
               <input ref="ieneInput" />
             </label>
           </p>
