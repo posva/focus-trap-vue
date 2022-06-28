@@ -1,3 +1,9 @@
+## [3.3.1](https://github.com/posva/focus-trap-vue/compare/v3.3.0...v3.3.1) (2022-06-28)
+
+### Features
+
+- Allow passing a function to clickOutsideDeactivates prop ([#407](https://github.com/posva/focus-trap-vue/issues/407)) ([a4ab6bc](https://github.com/posva/focus-trap-vue/commit/a4ab6bc20ad176bde772ea0cc8fc9e8c29dcc047))
+
 # [3.3.0](https://github.com/posva/focus-trap-vue/compare/v3.2.1...v3.3.0) (2022-05-11)
 
 ### Bug Fixes
