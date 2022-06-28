@@ -35,7 +35,9 @@ const FocusTrapProps = defineFocusTrapProps({
     default: true,
   },
 
-  clickOutsideDeactivates: Boolean,
+  clickOutsideDeactivates: [Boolean, Function] as PropType<
+    Options['clickOutsideDeactivates']
+  >,
 
   initialFocus: [String, Function, Boolean] as PropType<
     Options['initialFocus']
