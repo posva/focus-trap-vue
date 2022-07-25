@@ -71,7 +71,7 @@
     "size-limit": "^7.0.8",
     "start-server-and-test": "^1.14.0",
     "typescript": "^4.7.4",
-    "vite": "^2.9.14",
+    "vite": "^3.0.2",
     "vue": "^3.2.37",
     "yorkie": "^2.0.0"
   },
