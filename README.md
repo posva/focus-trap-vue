@@ -1,4 +1,4 @@
-# focus-trap-vue [![Build Status](https://badgen.net/circleci/github/posva/focus-trap-vue/next)](https://circleci.com/gh/posva/focus-trap-vue) [![npm package](https://badgen.net/npm/v/focus-trap-vue/next)](https://www.npmjs.com/package/focus-trap-vue) [![thanks](https://badgen.net/badge/thanks/♥/pink)](https://github.com/posva/thanks)
+# focus-trap-vue [![Build Status](https://badgen.net/circleci/github/posva/focus-trap-vue)](https://circleci.com/gh/posva/focus-trap-vue) [![npm package](https://badgen.net/npm/v/focus-trap-vue)](https://www.npmjs.com/package/focus-trap-vue) [![thanks](https://badgen.net/badge/thanks/♥/pink)](https://github.com/posva/thanks)
 
 > Vue component to trap the focus within a DOM element
 
@@ -7,13 +7,13 @@
 ### For Vue 2
 
 ```sh
-npm install focus-trap focus-trap-vue
+npm install focus-trap focus-trap-vue@legacy
 ```
 
 ###  For Vue 3
 
 ```sh
-npm install focus-trap focus-trap-vue@next
+npm install focus-trap focus-trap-vue
 ```
 
 ## Usage
@@ -45,7 +45,7 @@ createApp(App)
 `FocusTrap` can be controlled in three different ways:
 
 - by using the `active` _Boolean_ prop
-- by using `v-model:active` (uses the `active` prop, *Vue 3 only*)
+- by using `v-model:active` (uses the `active` prop, _Vue 3 only_)
 - by calling the `activate`/`deactivate` method on the component
 
 The recommended approach is using `v-model:active` and it should contain **one single child**:
@@ -53,9 +53,7 @@ The recommended approach is using `v-model:active` and it should contain **one s
 ```html
 <focus-trap v-model:active="isActive">
   <modal-dialog tabindex="-1">
-    <p>
-      Do you accept the cookies?
-    </p>
+    <p>Do you accept the cookies?</p>
     <button @click="acceptCookies">Yes</button>
     <button @click="isActive = false">No</button>
   </modal-dialog>
@@ -72,9 +70,7 @@ always focus an interactable element instead of the modal container:
 ```html
 <focus-trap v-model:active="isActive" :initial-focus="() => $refs.nameInput">
   <modal-dialog>
-    <p>
-      What name do you want to use?
-    </p>
+    <p>What name do you want to use?</p>
     <form @submit.prevent="setName">
       <label>
         New Name
