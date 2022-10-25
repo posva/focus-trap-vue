@@ -59,7 +59,7 @@
     "@vitejs/plugin-vue": "^3.1.2",
     "@vue/compiler-sfc": "^3.2.41",
     "conventional-changelog-cli": "^2.2.2",
-    "cypress": "^9.7.0",
+    "cypress": "^10.11.0",
     "cypress-plugin-tab": "^1.0.5",
     "focus-trap": "^6.9.4",
     "lint-staged": "^13.0.3",
