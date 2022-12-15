@@ -58,6 +58,8 @@ const FocusTrapProps = defineFocusTrapProps({
   setReturnFocus: [Object, String, Boolean, Function] as PropType<
     Options['setReturnFocus']
   >,
+
+  tabbableOptions: Object as PropType<Options['tabbableOptions']>,
 })
 
 export const FocusTrap = defineComponent({
@@ -117,6 +119,7 @@ export const FocusTrap = defineComponent({
         onPostDeactivate: () => emit('postDeactivate'),
         initialFocus: props.initialFocus,
         fallbackFocus: props.fallbackFocus,
+        tabbableOptions: props.tabbableOptions,
       }))
     }
 
