@@ -1,3 +1,9 @@
+# [3.4.0](https://github.com/posva/focus-trap-vue/compare/v3.3.1...v3.4.0) (2022-12-15)
+
+### Features
+
+- add support for `tabbableOptions` ([#445](https://github.com/posva/focus-trap-vue/issues/445)) ([fec2556](https://github.com/posva/focus-trap-vue/commit/fec255642547815bc586177e0d009b29e438daba))
+
 ## [3.3.1](https://github.com/posva/focus-trap-vue/compare/v3.3.0...v3.3.1) (2022-06-28)
 
 ### Features
