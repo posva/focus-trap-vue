@@ -19,7 +19,7 @@ npm install focus-trap focus-trap-vue
 ## Usage
 
 This library exports one single named export `FocusTrap` and **requires
-[`focus-trap`](https://github.com/davidtheclark/focus-trap) as a peer
+[`focus-trap`](https://github.com/focus-trap/focus-trap) as a peer
 dependency**. So you can locally import the component or declare it globally:
 
 ###  Register globally in a Vue 2 app
@@ -95,7 +95,7 @@ always focus an interactable element instead of the modal container:
 - `tabbableOptions`: `FocusTrapTabbableOptions` _Options passed to `tabbableOptions`_
 
 Please, refer to
-[focus-trap](https://github.com/davidtheclark/focus-trap#focustrap--createfocustrapelement-createoptions)
+[focus-trap](https://github.com/focus-trap/focus-trap#focustrap--createfocustrapelement-createoptions)
 documentation to know what they do.
 
 ### Events
@@ -128,7 +128,7 @@ Note the use of arrow functions, this is necessary because we are accessing
 
 ## Related
 
-- Focus Trap: https://github.com/davidtheclark/focus-trap
+- Focus Trap: https://github.com/focus-trap/focus-trap
 
 ## License
 
