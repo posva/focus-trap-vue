@@ -92,7 +92,7 @@ always focus an interactable element instead of the modal container:
 - `clickOutsideDeactivates`: `boolean | ((e: MouseEvent | TouchEvent) => boolean)`
 - `initialFocus`: `string | (() => Element)` _Selector or function returning an Element_
 - `fallbackFocus`: `string | (() => Element)` _Selector or function returning an Element_
-- `tabbableOptions`: `object` _Options for [`tabbable`](https://github.com/focus-trap/tabbable#common-options)_
+- `tabbableOptions`: `FocusTrapTabbableOptions` _Options passed to `tabbableOptions`_
 
 Please, refer to
 [focus-trap](https://github.com/davidtheclark/focus-trap#focustrap--createfocustrapelement-createoptions)
