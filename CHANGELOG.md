@@ -1,3 +1,13 @@
+# [4.0.0](https://github.com/posva/focus-trap-vue/compare/v3.4.0...v4.0.0) (2022-12-15)
+
+### Code Refactoring
+
+- upgrade focus-trap to v7 ([445b128](https://github.com/posva/focus-trap-vue/commit/445b12859396e5d97ab3757a741b97986dc71474))
+
+### BREAKING CHANGES
+
+- Plesae refer to [focus-trap changelog](https://github.com/focus-trap/focus-trap/blob/master/CHANGELOG.md#700) for breaking changes
+
 # [3.4.0](https://github.com/posva/focus-trap-vue/compare/v3.3.1...v3.4.0) (2022-12-15)
 
 ### Features
