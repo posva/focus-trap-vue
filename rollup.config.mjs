@@ -3,9 +3,17 @@ import ts from 'rollup-plugin-typescript2'
 import replace from '@rollup/plugin-replace'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
-import pascalcase from 'pascalcase'
+import { pascalCase } from 'scule'
+import chalk from 'chalk'
+import terser from '@rollup/plugin-terser'
+import pkg from './package.json' assert { type: 'json' }
+import { fileURLToPath } from 'url'
 
-const pkg = require('./package.json')
+// FIXME: remove after https://github.com/rollup/plugins/pull/1374 is merged
+global.__filename = fileURLToPath(import.meta.url)
+const rootDir = fileURLToPath(new URL('.', import.meta.url))
+console.log(rootDir)
+
 const name = pkg.name
 
 function getAuthors(pkg) {
@@ -70,7 +78,7 @@ export default packageConfigs
 
 function createConfig(format, output, plugins = []) {
   if (!output) {
-    console.log(require('chalk').yellow(`invalid format: "${format}"`))
+    console.log(chalk.yellow(`invalid format: "${format}"`))
     process.exit(1)
   }
 
@@ -85,14 +93,14 @@ function createConfig(format, output, plugins = []) {
   const isNodeBuild = format === 'cjs'
   const isBundlerESMBuild = /esm-bundler/.test(format)
 
-  if (isGlobalBuild) output.name = pascalcase(pkg.name)
+  if (isGlobalBuild) output.name = pascalCase(pkg.name)
 
   const shouldEmitDeclarations = !hasTSChecked
 
   const tsPlugin = ts({
     check: !hasTSChecked,
-    tsconfig: path.resolve(__dirname, 'tsconfig.json'),
-    cacheRoot: path.resolve(__dirname, 'node_modules/.rts2_cache'),
+    tsconfig: path.resolve(rootDir, 'tsconfig.json'),
+    cacheRoot: path.resolve(rootDir, 'node_modules/.rts2_cache'),
     tsconfigOverride: {
       compilerOptions: {
         sourceMap: output.sourcemap,
@@ -184,7 +192,6 @@ function createProductionConfig(format) {
 }
 
 function createMinifiedConfig(format) {
-  const { terser } = require('rollup-plugin-terser')
   return createConfig(
     format,
     {
