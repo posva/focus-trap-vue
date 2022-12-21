@@ -102,8 +102,8 @@
   },
   "homepage": "https://github.com/posva/focus-trap-vue#readme",
   "peerDependencies": {
-    "focus-trap": "^7.2.0",
-    "vue": "^3.0.0-rc.13"
+    "focus-trap": "^7.0.0",
+    "vue": "^3.0.0"
   },
   "dependencies": {}
 }
