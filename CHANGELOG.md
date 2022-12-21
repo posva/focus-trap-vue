@@ -1,3 +1,9 @@
+## [4.0.1](https://github.com/posva/focus-trap-vue/compare/v4.0.0...v4.0.1) (2022-12-21)
+
+### Bug Fixes
+
+- adjust peerDeps range ([37633d8](https://github.com/posva/focus-trap-vue/commit/37633d85ec610a53b26bf32655100e60b5d3f857))
+
 # [4.0.0](https://github.com/posva/focus-trap-vue/compare/v3.4.0...v4.0.0) (2022-12-15)
 
 ### Code Refactoring
