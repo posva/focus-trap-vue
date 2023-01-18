@@ -49,7 +49,10 @@ const FocusTrapProps = defineFocusTrapProps({
 
   checkCanReturnFocus: Function as PropType<Options['checkCanReturnFocus']>,
 
-  delayInitialFocus: { type: Boolean, default: true },
+  delayInitialFocus: {
+    type: Boolean as PropType<Options['delayInitialFocus']>,
+    default: true,
+  },
 
   document: Object as PropType<Options['document']>,
 
@@ -120,6 +123,7 @@ export const FocusTrap = defineComponent({
         initialFocus: props.initialFocus,
         fallbackFocus: props.fallbackFocus,
         tabbableOptions: props.tabbableOptions,
+        delayInitialFocus: props.delayInitialFocus,
       }))
     }
 
