@@ -96,7 +96,9 @@ export const FocusTrap = defineComponent({
       const innerElement = wrapperEl.value
       return (
         innerElement &&
-        (innerElement instanceof HTMLElement ? innerElement : innerElement.$el)
+        (innerElement instanceof HTMLElement
+          ? innerElement
+          : ((innerElement as ComponentPublicInstance).$el as HTMLElement))
       )
     })
 
