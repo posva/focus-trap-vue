@@ -1,3 +1,9 @@
+## [4.0.2](https://github.com/posva/focus-trap-vue/compare/v4.0.1...v4.0.2) (2023-02-26)
+
+### Bug Fixes
+
+- forward delayInitialFocus prop to createFocusTrap ([#454](https://github.com/posva/focus-trap-vue/issues/454)) ([f067ea6](https://github.com/posva/focus-trap-vue/commit/f067ea65b83e734eca81540169f0439cd9678388))
+
 ## [4.0.1](https://github.com/posva/focus-trap-vue/compare/v4.0.0...v4.0.1) (2022-12-21)
 
 ### Bug Fixes
