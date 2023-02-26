@@ -102,12 +102,12 @@ export const FocusTrap = defineComponent({
       )
     })
 
-    const ensureTrap = () => {
+    function ensureTrap() {
       if (trap) {
         return trap
       }
 
-      return (trap = createFocusTrap(el.value as HTMLElement, {
+      return (trap = createFocusTrap(el.value!, {
         escapeDeactivates: props.escapeDeactivates,
         allowOutsideClick: props.allowOutsideClick,
         returnFocusOnDeactivate: props.returnFocusOnDeactivate,
@@ -164,9 +164,7 @@ export const FocusTrap = defineComponent({
     // the $router and $route properties on components.
     return {
       activate() {
-        ensureTrap()
-        // @ts-ignore
-        trap.activate()
+        ensureTrap().activate()
       },
       deactivate() {
         trap && trap.deactivate()
