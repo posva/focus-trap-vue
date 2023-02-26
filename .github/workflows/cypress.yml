@@ -14,7 +14,10 @@ jobs:
 
       - uses: pnpm/action-setup@v2
 
-      - run: pnpm install
+      - name: 'Install packages'
+        run: pnpm install
+
+      - name: 'Lint, Types and build'
       - run: pnpm run lint
       - run: pnpm run test:types
       - run: pnpm run build
@@ -22,7 +25,8 @@ jobs:
       - name: Cypress PNPM Patch
         run: cp pnpm-lock.yaml package-lock.json
 
-      - uses: cypress-io/github-action@v4
+      - name: 'Test'
+        uses: cypress-io/github-action@v4
         with:
           # env: PORT=4000
           build: pnpm run build
