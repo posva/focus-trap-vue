@@ -25,8 +25,7 @@ jobs:
       - name: Cypress PNPM Patch
         run: cp pnpm-lock.yaml package-lock.json
 
-      - name: 'Test'
-        uses: cypress-io/github-action@v4
+      - uses: cypress-io/github-action@v4
         with:
           # env: PORT=4000
           build: pnpm run build
