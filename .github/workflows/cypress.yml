@@ -17,10 +17,14 @@ jobs:
       - name: 'Install packages'
         run: pnpm install
 
-      - name: 'Lint, Types and build'
-      - run: pnpm run lint
-      - run: pnpm run test:types
-      - run: pnpm run build
+      - name: 'Lint'
+        run: pnpm run lint
+
+      - name: 'TypeScript'
+        run: pnpm run test:types
+
+      - name: 'Build'
+        run: pnpm run build
 
       - name: Cypress PNPM Patch
         run: cp pnpm-lock.yaml package-lock.json
