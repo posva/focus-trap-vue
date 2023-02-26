@@ -12,10 +12,15 @@ jobs:
         with:
           node-version: 16
 
+      - uses: pnpm/action-setup@v2
+
       - run: pnpm install
       - run: pnpm run lint
       - run: pnpm run test:types
       - run: pnpm run build
+
+      - name: Cypress PNPM Patch
+        run: cp pnpm-lock.yaml package-lock.json
 
       - uses: cypress-io/github-action@v4
         with:
