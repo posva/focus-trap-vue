@@ -50,7 +50,7 @@ const FocusTrapProps = defineFocusTrapProps({
   checkCanReturnFocus: Function as PropType<Options['checkCanReturnFocus']>,
 
   delayInitialFocus: {
-    type: Boolean as PropType<Options['delayInitialFocus']>,
+    type: Boolean,
     default: true,
   },
 
