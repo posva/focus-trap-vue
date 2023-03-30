@@ -22,7 +22,7 @@ specifiers:
   scule: ^1.0.0
   size-limit: ^8.2.4
   start-server-and-test: ^2.0.0
-  typescript: ^4.9.5
+  typescript: ^5.0.3
   vite: ^4.2.1
   vue: ^3.2.47
   yorkie: ^2.0.0
@@ -45,11 +45,11 @@ devDependencies:
   lint-staged: 13.2.0
   prettier: 2.8.7
   rollup: 3.20.2
-  rollup-plugin-typescript2: 0.34.1_e7tciabaay7z2i5ycjdzz3zl6i
+  rollup-plugin-typescript2: 0.34.1_veck7oukgpukn72f5inxoyux7q
   scule: 1.0.0
   size-limit: 8.2.4
   start-server-and-test: 2.0.0
-  typescript: 4.9.5
+  typescript: 5.0.3
   vite: 4.2.1
   vue: 3.2.47
   yorkie: 2.0.0
@@ -3122,7 +3122,7 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-typescript2/0.34.1_e7tciabaay7z2i5ycjdzz3zl6i:
+  /rollup-plugin-typescript2/0.34.1_veck7oukgpukn72f5inxoyux7q:
     resolution: {integrity: sha512-P4cHLtGikESmqi1CA+tdMDUv8WbQV48mzPYt77TSTOPJpERyZ9TXdDgjSDix8Fkqce6soYz3+fa4lrC93IEkcw==}
     peerDependencies:
       rollup: '>=1.26.3'
@@ -3134,7 +3134,7 @@ packages:
       rollup: 3.20.2
       semver: 7.3.8
       tslib: 2.5.0
-      typescript: 4.9.5
+      typescript: 5.0.3
     dev: true
 
   /rollup/3.20.2:
@@ -3629,9 +3629,9 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript/4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  /typescript/5.0.3:
+    resolution: {integrity: sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==}
+    engines: {node: '>=12.20'}
     hasBin: true
     dev: true
 
