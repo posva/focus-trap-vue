@@ -2,54 +2,54 @@ lockfileVersion: 5.4
 
 specifiers:
   '@microsoft/api-extractor': ^7.34.4
-  '@rollup/plugin-alias': ^4.0.3
+  '@rollup/plugin-alias': ^4.0.4
   '@rollup/plugin-commonjs': ^24.0.1
-  '@rollup/plugin-node-resolve': ^15.0.1
+  '@rollup/plugin-node-resolve': ^15.0.2
   '@rollup/plugin-replace': ^5.0.2
-  '@rollup/plugin-terser': ^0.4.0
+  '@rollup/plugin-terser': ^0.4.1
   '@size-limit/preset-small-lib': ^8.2.4
   '@vitejs/plugin-vue': ^4.1.0
   '@vue/compiler-sfc': ^3.2.47
   chalk: ^5.2.0
   conventional-changelog-cli: ^2.2.2
-  cypress: ^12.8.1
+  cypress: ^12.9.0
   cypress-plugin-tab: ^1.0.5
   focus-trap: ^7.4.0
-  lint-staged: ^13.2.0
+  lint-staged: ^13.2.1
   prettier: ^2.8.7
   rollup: ^3.20.2
   rollup-plugin-typescript2: ^0.34.1
   scule: ^1.0.0
   size-limit: ^8.2.4
   start-server-and-test: ^2.0.0
-  typescript: ^5.0.3
+  typescript: ^5.0.4
   vite: ^4.2.1
   vue: ^3.2.47
   yorkie: ^2.0.0
 
 devDependencies:
   '@microsoft/api-extractor': 7.34.4
-  '@rollup/plugin-alias': 4.0.3_rollup@3.20.2
+  '@rollup/plugin-alias': 4.0.4_rollup@3.20.2
   '@rollup/plugin-commonjs': 24.0.1_rollup@3.20.2
-  '@rollup/plugin-node-resolve': 15.0.1_rollup@3.20.2
+  '@rollup/plugin-node-resolve': 15.0.2_rollup@3.20.2
   '@rollup/plugin-replace': 5.0.2_rollup@3.20.2
-  '@rollup/plugin-terser': 0.4.0_rollup@3.20.2
+  '@rollup/plugin-terser': 0.4.1_rollup@3.20.2
   '@size-limit/preset-small-lib': 8.2.4_size-limit@8.2.4
   '@vitejs/plugin-vue': 4.1.0_vite@4.2.1+vue@3.2.47
   '@vue/compiler-sfc': 3.2.47
   chalk: 5.2.0
   conventional-changelog-cli: 2.2.2
-  cypress: 12.8.1
+  cypress: 12.9.0
   cypress-plugin-tab: 1.0.5
   focus-trap: 7.4.0
-  lint-staged: 13.2.0
+  lint-staged: 13.2.1
   prettier: 2.8.7
   rollup: 3.20.2
-  rollup-plugin-typescript2: 0.34.1_veck7oukgpukn72f5inxoyux7q
+  rollup-plugin-typescript2: 0.34.1_4uaj55xah35he2rmgneoluguqy
   scule: 1.0.0
   size-limit: 8.2.4
   start-server-and-test: 2.0.0
-  typescript: 5.0.3
+  typescript: 5.0.4
   vite: 4.2.1
   vue: 3.2.47
   yorkie: 2.0.0
@@ -453,8 +453,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@rollup/plugin-alias/4.0.3_rollup@3.20.2:
-    resolution: {integrity: sha512-ZuDWE1q4PQDhvm/zc5Prun8sBpLJy41DMptYrS6MhAy9s9kL/doN1613BWfEchGVfKxzliJ3BjbOPizXX38DbQ==}
+  /@rollup/plugin-alias/4.0.4_rollup@3.20.2:
+    resolution: {integrity: sha512-0CaAY238SMtYAWEXXptWSR8iz8NYZnH7zNBKuJ14xFJSGwLtPgjvXYsoApAHfzYXXH1ejxpVw7WlHss3zhh9SQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.20.0||^2.0.0||^3.0.0
@@ -484,8 +484,8 @@ packages:
       rollup: 3.20.2
     dev: true
 
-  /@rollup/plugin-node-resolve/15.0.1_rollup@3.20.2:
-    resolution: {integrity: sha512-ReY88T7JhJjeRVbfCyNj+NXAG3IIsVMsX9b5/9jC98dRP8/yxlZdz7mHZbHk5zHr24wZZICS5AcXsFZAXYUQEg==}
+  /@rollup/plugin-node-resolve/15.0.2_rollup@3.20.2:
+    resolution: {integrity: sha512-Y35fRGUjC3FaurG722uhUuG8YHOJRJQbI6/CkbRkdPotSpDj9NtIN85z1zrcyDcCQIW4qp5mgG72U+gJ0TAFEg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.78.0||^3.0.0
@@ -516,8 +516,8 @@ packages:
       rollup: 3.20.2
     dev: true
 
-  /@rollup/plugin-terser/0.4.0_rollup@3.20.2:
-    resolution: {integrity: sha512-Ipcf3LPNerey1q9ZMjiaWHlNPEHNU/B5/uh9zXLltfEQ1lVSLLeZSgAtTPWGyw8Ip1guOeq+mDtdOlEj/wNxQw==}
+  /@rollup/plugin-terser/0.4.1_rollup@3.20.2:
+    resolution: {integrity: sha512-aKS32sw5a7hy+fEXVy+5T95aDIwjpGHCTv833HXVtyKMDoVS7pBr5K3L9hEQoNqbJFjfANPrNpIXlTQ7is00eA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.x || ^3.x
@@ -1404,8 +1404,8 @@ packages:
       ally.js: 1.4.1
     dev: true
 
-  /cypress/12.8.1:
-    resolution: {integrity: sha512-lIFbKdaSYAOarNLHNFa2aPZu6YSF+8UY4VRXMxJrFUnk6RvfG0AWsZ7/qle/aIz30TNUD4aOihz2ZgS4vuQVSA==}
+  /cypress/12.9.0:
+    resolution: {integrity: sha512-Ofe09LbHKgSqX89Iy1xen2WvpgbvNxDzsWx3mgU1mfILouELeXYGwIib3ItCwoRrRifoQwcBFmY54Vs0zw7QCg==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     requiresBuild: true
@@ -2385,8 +2385,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged/13.2.0:
-    resolution: {integrity: sha512-GbyK5iWinax5Dfw5obm2g2ccUiZXNGtAS4mCbJ0Lv4rq6iEtfBSjOYdcbOtAIFtM114t0vdpViDDetjVTSd8Vw==}
+  /lint-staged/13.2.1:
+    resolution: {integrity: sha512-8gfzinVXoPfga5Dz/ZOn8I2GOhf81Wvs+KwbEXQn/oWZAvCVS2PivrXfVbFJc93zD16uC0neS47RXHIjXKYZQw==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -3122,7 +3122,7 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-typescript2/0.34.1_veck7oukgpukn72f5inxoyux7q:
+  /rollup-plugin-typescript2/0.34.1_4uaj55xah35he2rmgneoluguqy:
     resolution: {integrity: sha512-P4cHLtGikESmqi1CA+tdMDUv8WbQV48mzPYt77TSTOPJpERyZ9TXdDgjSDix8Fkqce6soYz3+fa4lrC93IEkcw==}
     peerDependencies:
       rollup: '>=1.26.3'
@@ -3134,7 +3134,7 @@ packages:
       rollup: 3.20.2
       semver: 7.3.8
       tslib: 2.5.0
-      typescript: 5.0.3
+      typescript: 5.0.4
     dev: true
 
   /rollup/3.20.2:
@@ -3629,8 +3629,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript/5.0.3:
-    resolution: {integrity: sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==}
+  /typescript/5.0.4:
+    resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
     engines: {node: '>=12.20'}
     hasBin: true
     dev: true
