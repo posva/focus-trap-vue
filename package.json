@@ -51,7 +51,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.35.2",
+    "@microsoft/api-extractor": "^7.35.4",
     "@rollup/plugin-alias": "^5.0.0",
     "@rollup/plugin-commonjs": "^25.0.1",
     "@rollup/plugin-node-resolve": "^15.1.0",
@@ -67,7 +67,7 @@
     "focus-trap": "^7.4.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
-    "rollup": "^3.25.0",
+    "rollup": "^3.25.1",
     "rollup-plugin-typescript2": "^0.34.1",
     "scule": "^1.0.0",
     "size-limit": "^8.2.4",
