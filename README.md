@@ -37,7 +37,7 @@ import { FocusTrap } from 'focus-trap-vue'
 
 createApp(App)
   .component('FocusTrap', FocusTrap)
-  .mount('#app)
+  .mount('#app')
 ```
 
 **Note this documentation is for Vue 3 and some props/events might not exist in the Vue 2 version**
