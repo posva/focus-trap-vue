@@ -6,14 +6,14 @@ settings:
 
 devDependencies:
   '@microsoft/api-extractor':
-    specifier: ^7.36.1
-    version: 7.36.1
+    specifier: ^7.36.2
+    version: 7.36.2
   '@rollup/plugin-alias':
     specifier: ^5.0.0
     version: 5.0.0(rollup@3.26.2)
   '@rollup/plugin-commonjs':
-    specifier: ^25.0.2
-    version: 25.0.2(rollup@3.26.2)
+    specifier: ^25.0.3
+    version: 25.0.3(rollup@3.26.2)
   '@rollup/plugin-node-resolve':
     specifier: ^15.1.0
     version: 15.1.0(rollup@3.26.2)
@@ -28,7 +28,7 @@ devDependencies:
     version: 8.2.6(size-limit@8.2.6)
   '@vitejs/plugin-vue':
     specifier: ^4.2.3
-    version: 4.2.3(vite@4.4.2)(vue@3.3.4)
+    version: 4.2.3(vite@4.4.4)(vue@3.3.4)
   '@vue/compiler-sfc':
     specifier: ^3.3.4
     version: 3.3.4
@@ -39,8 +39,8 @@ devDependencies:
     specifier: ^2.2.2
     version: 2.2.2
   cypress:
-    specifier: ^12.17.0
-    version: 12.17.0
+    specifier: ^12.17.1
+    version: 12.17.1
   cypress-plugin-tab:
     specifier: ^1.0.5
     version: 1.0.5
@@ -72,8 +72,8 @@ devDependencies:
     specifier: ^5.1.6
     version: 5.1.6
   vite:
-    specifier: ^4.4.2
-    version: 4.4.2
+    specifier: ^4.4.4
+    version: 4.4.4
   vue:
     specifier: ^3.3.4
     version: 3.3.4
@@ -632,8 +632,8 @@ packages:
       - '@types/node'
     dev: true
 
-  /@microsoft/api-extractor@7.36.1:
-    resolution: {integrity: sha512-2SPp1jq6wDY5IOsRLUv/4FxngslctBZJlztAJ3uWpCAwqKQG7ESdL3DhEza+StbYLtBQmu1Pk6q1Vkhl7qD/bg==}
+  /@microsoft/api-extractor@7.36.2:
+    resolution: {integrity: sha512-ONe/jOmTZtR3OjTkWKHmeSV1P5ozbHDxHr6FV3KoWyIl1AcPk2B3dmvVBM5eOlZB5bgM66nxcWQTZ6msQo2hHg==}
     hasBin: true
     dependencies:
       '@microsoft/api-extractor-model': 7.27.4
@@ -699,8 +699,8 @@ packages:
       slash: 4.0.0
     dev: true
 
-  /@rollup/plugin-commonjs@25.0.2(rollup@3.26.2):
-    resolution: {integrity: sha512-NGTwaJxIO0klMs+WSFFtBP7b9TdTJ3K76HZkewT8/+yHzMiUGVQgaPtLQxNVYIgT5F7lxkEyVID+yS3K7bhCow==}
+  /@rollup/plugin-commonjs@25.0.3(rollup@3.26.2):
+    resolution: {integrity: sha512-uBdtWr/H3BVcgm97MUdq2oJmqBR23ny1hOrWe2PKo9FTbjsGqg32jfasJUKYAI5ouqacjRnj65mBB/S79F+GQA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0
@@ -905,14 +905,14 @@ packages:
     dev: true
     optional: true
 
-  /@vitejs/plugin-vue@4.2.3(vite@4.4.2)(vue@3.3.4):
+  /@vitejs/plugin-vue@4.2.3(vite@4.4.4)(vue@3.3.4):
     resolution: {integrity: sha512-R6JDUfiZbJA9cMiguQ7jxALsgiprjBeHL5ikpXfJCH62pPHtI+JdJ5xWj6Ev73yXSlYl86+blXn1kZHQ7uElxw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.2
+      vite: 4.4.4
       vue: 3.3.4
     dev: true
 
@@ -1642,8 +1642,8 @@ packages:
       ally.js: 1.4.1
     dev: true
 
-  /cypress@12.17.0:
-    resolution: {integrity: sha512-nq0ug8Zrjq/2khHU1PTNxg+3/n1oqtmAFCxwQhS6QzkQ4mR6RLitX+cGIOuIMfnEbDAtVub0hZh661FOA16JxA==}
+  /cypress@12.17.1:
+    resolution: {integrity: sha512-eKfBgO6t8waEyhegL4gxD7tcI6uTCGttu+ZU7y9Hq8BlpMztd7iLeIF4AJFAnbZH1xjX+wwgg4cRKFNSvv3VWQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     requiresBuild: true
@@ -3964,8 +3964,8 @@ packages:
       extsprintf: 1.3.0
     dev: true
 
-  /vite@4.4.2:
-    resolution: {integrity: sha512-zUcsJN+UvdSyHhYa277UHhiJ3iq4hUBwHavOpsNUGsTgjBeoBlK8eDt+iT09pBq0h9/knhG/SPrZiM7cGmg7NA==}
+  /vite@4.4.4:
+    resolution: {integrity: sha512-4mvsTxjkveWrKDJI70QmelfVqTm+ihFAb6+xf4sjEU2TmUCTlVX87tmg/QooPEMQb/lM9qGHT99ebqPziEd3wg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
