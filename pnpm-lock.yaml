@@ -25,7 +25,7 @@ devDependencies:
     version: 0.4.3(rollup@3.29.3)
   '@size-limit/preset-small-lib':
     specifier: ^8.2.6
-    version: 8.2.6(size-limit@8.2.6)
+    version: 8.2.6(size-limit@9.0.0)
   '@vitejs/plugin-vue':
     specifier: ^4.3.4
     version: 4.3.4(vite@4.4.9)(vue@3.3.4)
@@ -63,8 +63,8 @@ devDependencies:
     specifier: ^1.0.0
     version: 1.0.0
   size-limit:
-    specifier: ^8.2.6
-    version: 8.2.6
+    specifier: ^9.0.0
+    version: 9.0.0
   start-server-and-test:
     specifier: ^2.0.1
     version: 2.0.1
@@ -636,7 +636,7 @@ packages:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
     dev: true
 
-  /@size-limit/esbuild@8.2.6(size-limit@8.2.6):
+  /@size-limit/esbuild@8.2.6(size-limit@9.0.0):
     resolution: {integrity: sha512-a4c8xVDuDMYw5jF655ADjQDluw3jGPPYer6UJock5rSnUlWnIbmT/Ohud7gJGq5gqyLUQOCrBD7NB3g+mlhj4g==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -644,27 +644,27 @@ packages:
     dependencies:
       esbuild: 0.18.11
       nanoid: 3.3.6
-      size-limit: 8.2.6
+      size-limit: 9.0.0
     dev: true
 
-  /@size-limit/file@8.2.6(size-limit@8.2.6):
+  /@size-limit/file@8.2.6(size-limit@9.0.0):
     resolution: {integrity: sha512-B7ayjxiJsbtXdIIWazJkB5gezi5WBMecdHTFPMDhI3NwEML1RVvUjAkrb1mPAAkIpt2LVHPnhdCUHjqDdjugwg==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     peerDependencies:
       size-limit: 8.2.6
     dependencies:
       semver: 7.5.3
-      size-limit: 8.2.6
+      size-limit: 9.0.0
     dev: true
 
-  /@size-limit/preset-small-lib@8.2.6(size-limit@8.2.6):
+  /@size-limit/preset-small-lib@8.2.6(size-limit@9.0.0):
     resolution: {integrity: sha512-roanEuscDaaXDsT5Cg9agMbmsQVlMr66eRg3AwT2o4vE7WFLR8Z42p0AHZiwucW1nGpCxAh8E08Qa/yyVuj5nA==}
     peerDependencies:
       size-limit: 8.2.6
     dependencies:
-      '@size-limit/esbuild': 8.2.6(size-limit@8.2.6)
-      '@size-limit/file': 8.2.6(size-limit@8.2.6)
-      size-limit: 8.2.6
+      '@size-limit/esbuild': 8.2.6(size-limit@9.0.0)
+      '@size-limit/file': 8.2.6(size-limit@9.0.0)
+      size-limit: 9.0.0
     dev: true
 
   /@types/argparse@1.0.38:
@@ -3323,9 +3323,9 @@ packages:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
 
-  /size-limit@8.2.6:
-    resolution: {integrity: sha512-zpznim/tX/NegjoQuRKgWTF4XiB0cn2qt90uJzxYNTFAqexk4b94DOAkBD3TwhC6c3kw2r0KcnA5upziVMZqDg==}
-    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
+  /size-limit@9.0.0:
+    resolution: {integrity: sha512-DrA7o2DeRN3s+vwCA9nn7Ck9Y4pn9t0GNUwQRpKqBtBmNkl6LA2s/NlNCdtKHrEkRTeYA1ZQ65mnYveo9rUqgA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     dependencies:
       bytes-iec: 3.1.1
