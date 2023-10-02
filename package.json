@@ -65,7 +65,7 @@
     "cypress": "^12.17.4",
     "cypress-plugin-tab": "^1.0.5",
     "focus-trap": "^7.5.3",
-    "lint-staged": "^13.3.0",
+    "lint-staged": "^14.0.1",
     "prettier": "^2.8.8",
     "rollup": "^3.29.4",
     "rollup-plugin-typescript2": "^0.36.0",
