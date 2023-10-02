@@ -6,23 +6,23 @@ settings:
 
 devDependencies:
   '@microsoft/api-extractor':
-    specifier: ^7.37.0
-    version: 7.37.0
+    specifier: ^7.38.0
+    version: 7.38.0
   '@rollup/plugin-alias':
     specifier: ^5.0.0
-    version: 5.0.0(rollup@3.29.3)
+    version: 5.0.0(rollup@3.29.4)
   '@rollup/plugin-commonjs':
     specifier: ^25.0.4
-    version: 25.0.4(rollup@3.29.3)
+    version: 25.0.4(rollup@3.29.4)
   '@rollup/plugin-node-resolve':
     specifier: ^15.2.1
-    version: 15.2.1(rollup@3.29.3)
+    version: 15.2.1(rollup@3.29.4)
   '@rollup/plugin-replace':
     specifier: ^5.0.2
-    version: 5.0.2(rollup@3.29.3)
+    version: 5.0.2(rollup@3.29.4)
   '@rollup/plugin-terser':
     specifier: ^0.4.3
-    version: 0.4.3(rollup@3.29.3)
+    version: 0.4.3(rollup@3.29.4)
   '@size-limit/preset-small-lib':
     specifier: ^8.2.6
     version: 8.2.6(size-limit@8.2.6)
@@ -45,8 +45,8 @@ devDependencies:
     specifier: ^1.0.5
     version: 1.0.5
   focus-trap:
-    specifier: ^7.5.2
-    version: 7.5.2
+    specifier: ^7.5.3
+    version: 7.5.3
   lint-staged:
     specifier: ^13.3.0
     version: 13.3.0
@@ -54,11 +54,11 @@ devDependencies:
     specifier: ^2.8.8
     version: 2.8.8
   rollup:
-    specifier: ^3.29.3
-    version: 3.29.3
+    specifier: ^3.29.4
+    version: 3.29.4
   rollup-plugin-typescript2:
-    specifier: ^0.35.0
-    version: 0.35.0(rollup@3.29.3)(typescript@5.2.2)
+    specifier: ^0.36.0
+    version: 0.36.0(rollup@3.29.4)(typescript@5.2.2)
   scule:
     specifier: ^1.0.0
     version: 1.0.0
@@ -424,26 +424,26 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@microsoft/api-extractor-model@7.28.0:
-    resolution: {integrity: sha512-QIMtUVm1tqiKG+M6ciFgRShcDoovyltaeg+CbyOnyr7SMrp6gg0ojK5/nToMqR9kAvsTS4QVgW4Twl50EoAjcw==}
+  /@microsoft/api-extractor-model@7.28.2:
+    resolution: {integrity: sha512-vkojrM2fo3q4n4oPh4uUZdjJ2DxQ2+RnDQL/xhTWSRUNPF6P4QyrvY357HBxbnltKcYu+nNNolVqc6TIGQ73Ig==}
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.60.0
+      '@rushstack/node-core-library': 3.61.0
     transitivePeerDependencies:
       - '@types/node'
     dev: true
 
-  /@microsoft/api-extractor@7.37.0:
-    resolution: {integrity: sha512-df/wffWpDhYRw7kzdxeHGsCpim+dC8aFiZlsJb4uFvVPWhBZpDzOhQxSUTFx3Df1ORY+/JjuPR3fDE9Hq+PHzQ==}
+  /@microsoft/api-extractor@7.38.0:
+    resolution: {integrity: sha512-e1LhZYnfw+JEebuY2bzhw0imDCl1nwjSThTrQqBXl40hrVo6xm3j/1EpUr89QyzgjqmAwek2ZkIVZbrhaR+cqg==}
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.28.0
+      '@microsoft/api-extractor-model': 7.28.2
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.60.0
-      '@rushstack/rig-package': 0.5.0
-      '@rushstack/ts-command-line': 4.16.0
+      '@rushstack/node-core-library': 3.61.0
+      '@rushstack/rig-package': 0.5.1
+      '@rushstack/ts-command-line': 4.16.1
       colors: 1.2.5
       lodash: 4.17.21
       resolve: 1.22.1
@@ -488,7 +488,7 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@rollup/plugin-alias@5.0.0(rollup@3.29.3):
+  /@rollup/plugin-alias@5.0.0(rollup@3.29.4):
     resolution: {integrity: sha512-l9hY5chSCjuFRPsnRm16twWBiSApl2uYFLsepQYwtBuAxNMQ/1dJqADld40P0Jkqm65GRTLy/AC6hnpVebtLsA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -497,11 +497,11 @@ packages:
       rollup:
         optional: true
     dependencies:
-      rollup: 3.29.3
+      rollup: 3.29.4
       slash: 4.0.0
     dev: true
 
-  /@rollup/plugin-commonjs@25.0.4(rollup@3.29.3):
+  /@rollup/plugin-commonjs@25.0.4(rollup@3.29.4):
     resolution: {integrity: sha512-L92Vz9WUZXDnlQQl3EwbypJR4+DM2EbsO+/KOcEkP4Mc6Ct453EeDB2uH9lgRwj4w5yflgNpq9pHOiY8aoUXBQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -510,16 +510,16 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.29.3)
+      '@rollup/pluginutils': 5.0.2(rollup@3.29.4)
       commondir: 1.0.1
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
       magic-string: 0.27.0
-      rollup: 3.29.3
+      rollup: 3.29.4
     dev: true
 
-  /@rollup/plugin-node-resolve@15.2.1(rollup@3.29.3):
+  /@rollup/plugin-node-resolve@15.2.1(rollup@3.29.4):
     resolution: {integrity: sha512-nsbUg588+GDSu8/NS8T4UAshO6xeaOfINNuXeVHcKV02LJtoRaM1SiOacClw4kws1SFiNhdLGxlbMY9ga/zs/w==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -528,16 +528,16 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.29.3)
+      '@rollup/pluginutils': 5.0.2(rollup@3.29.4)
       '@types/resolve': 1.20.2
       deepmerge: 4.3.0
       is-builtin-module: 3.2.1
       is-module: 1.0.0
       resolve: 1.22.1
-      rollup: 3.29.3
+      rollup: 3.29.4
     dev: true
 
-  /@rollup/plugin-replace@5.0.2(rollup@3.29.3):
+  /@rollup/plugin-replace@5.0.2(rollup@3.29.4):
     resolution: {integrity: sha512-M9YXNekv/C/iHHK+cvORzfRYfPbq0RDD8r0G+bMiTXjNGKulPnCT9O3Ss46WfhI6ZOCgApOP7xAdmCQJ+U2LAA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -546,12 +546,12 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.29.3)
+      '@rollup/pluginutils': 5.0.2(rollup@3.29.4)
       magic-string: 0.27.0
-      rollup: 3.29.3
+      rollup: 3.29.4
     dev: true
 
-  /@rollup/plugin-terser@0.4.3(rollup@3.29.3):
+  /@rollup/plugin-terser@0.4.3(rollup@3.29.4):
     resolution: {integrity: sha512-EF0oejTMtkyhrkwCdg0HJ0IpkcaVg1MMSf2olHb2Jp+1mnLM04OhjpJWGma4HobiDTF0WCyViWuvadyE9ch2XA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -560,7 +560,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      rollup: 3.29.3
+      rollup: 3.29.4
       serialize-javascript: 6.0.1
       smob: 1.1.1
       terser: 5.17.4
@@ -574,7 +574,7 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@rollup/pluginutils@5.0.2(rollup@3.29.3):
+  /@rollup/pluginutils@5.0.2(rollup@3.29.4):
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -586,11 +586,11 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 3.29.3
+      rollup: 3.29.4
     dev: true
 
-  /@rushstack/node-core-library@3.60.0:
-    resolution: {integrity: sha512-PcyrqhILvzU+65wMFybQ2VeGNnU5JzhDq2OvUi3j6jPUxyllM7b2hrRUwCuVaYboewYzIbpzXFzgxe2K7ii1nw==}
+  /@rushstack/node-core-library@3.61.0:
+    resolution: {integrity: sha512-tdOjdErme+/YOu4gPed3sFS72GhtWCgNV9oDsHDnoLY5oDfwjKUc9Z+JOZZ37uAxcm/OCahDHfuu2ugqrfWAVQ==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
@@ -606,15 +606,15 @@ packages:
       z-schema: 5.0.5
     dev: true
 
-  /@rushstack/rig-package@0.5.0:
-    resolution: {integrity: sha512-bGnOW4DWHOePDiABKy6qyqYJl9i7fKn4bRucExRVt5QzyPxuVHMl8CMmCabtoNSpXzgG3qymWOrMoa/W2PpJrw==}
+  /@rushstack/rig-package@0.5.1:
+    resolution: {integrity: sha512-pXRYSe29TjRw7rqxD4WS3HN/sRSbfr+tJs4a9uuaSIBAITbUggygdhuG0VrO0EO+QqH91GhYMN4S6KRtOEmGVA==}
     dependencies:
       resolve: 1.22.1
       strip-json-comments: 3.1.1
     dev: true
 
-  /@rushstack/ts-command-line@4.16.0:
-    resolution: {integrity: sha512-WJKhdR9ThK9Iy7t78O3at7I3X4Ssp5RRZay/IQa8NywqkFy/DQbT3iLouodMMdUwLZD9n8n++xLubVd3dkmpkg==}
+  /@rushstack/ts-command-line@4.16.1:
+    resolution: {integrity: sha512-+OCsD553GYVLEmz12yiFjMOzuPeCiZ3f8wTiFHL30ZVXexTyPmgjwXEhg2K2P0a2lVf+8YBy7WtPoflB2Fp8/A==}
     dependencies:
       '@types/argparse': 1.0.38
       argparse: 1.0.10
@@ -1849,8 +1849,8 @@ packages:
       path-exists: 4.0.0
     dev: true
 
-  /focus-trap@7.5.2:
-    resolution: {integrity: sha512-p6vGNNWLDGwJCiEjkSK6oERj/hEyI9ITsSwIUICBoKLlWiTWXJRfQibCwcoi50rTZdbi87qDtUlMCmQwsGSgPw==}
+  /focus-trap@7.5.3:
+    resolution: {integrity: sha512-7UsT/eSJcTPF0aZp73u7hBRTABz26knRRTJfoTGFCQD5mUImLIIOwWWCrtoQdmWa7dykBi6H+Cp5i3S/kvsMeA==}
     dependencies:
       tabbable: 6.2.0
     dev: true
@@ -3196,8 +3196,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-typescript2@0.35.0(rollup@3.29.3)(typescript@5.2.2):
-    resolution: {integrity: sha512-szcIO9hPUx3PhQl91u4pfNAH2EKbtrXaES+m163xQVE5O1CC0ea6YZV/5woiDDW3CR9jF2CszPrKN+AFiND0bg==}
+  /rollup-plugin-typescript2@0.36.0(rollup@3.29.4)(typescript@5.2.2):
+    resolution: {integrity: sha512-NB2CSQDxSe9+Oe2ahZbf+B4bh7pHwjV5L+RSYpCu7Q5ROuN94F9b6ioWwKfz3ueL3KTtmX4o2MUH2cgHDIEUsw==}
     peerDependencies:
       rollup: '>=1.26.3'
       typescript: '>=2.4.0'
@@ -3205,14 +3205,14 @@ packages:
       '@rollup/pluginutils': 4.2.1
       find-cache-dir: 3.3.2
       fs-extra: 10.1.0
-      rollup: 3.29.3
-      semver: 7.3.8
-      tslib: 2.5.0
+      rollup: 3.29.4
+      semver: 7.5.4
+      tslib: 2.6.2
       typescript: 5.2.2
     dev: true
 
-  /rollup@3.29.3:
-    resolution: {integrity: sha512-T7du6Hum8jOkSWetjRgbwpM6Sy0nECYrYRSmZjayFcOddtKJWU4d17AC3HNUk7HRuqy4p+G7aEZclSHytqUmEg==}
+  /rollup@3.29.4:
+    resolution: {integrity: sha512-oWzmBZwvYrU0iJHtDmhsm662rC15FRXmcjCk1xD771dFDx5jJ02ufAQQTn0etB2emNk4J9EZg/yWKpsn9BWGRw==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -3255,14 +3255,6 @@ packages:
   /semver@6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
-    dev: true
-
-  /semver@7.3.8:
-    resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      lru-cache: 6.0.0
     dev: true
 
   /semver@7.5.3:
@@ -3680,6 +3672,10 @@ packages:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
     dev: true
 
+  /tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: true
+
   /tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
     dependencies:
@@ -3834,7 +3830,7 @@ packages:
     dependencies:
       esbuild: 0.18.11
       postcss: 8.4.27
-      rollup: 3.29.3
+      rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
