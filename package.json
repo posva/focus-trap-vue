@@ -57,7 +57,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@size-limit/preset-small-lib": "^8.2.6",
+    "@size-limit/preset-small-lib": "^9.0.0",
     "@vitejs/plugin-vue": "^4.4.0",
     "@vue/compiler-sfc": "^3.3.4",
     "chalk": "^5.3.0",
