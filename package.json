@@ -62,7 +62,7 @@
     "@vue/compiler-sfc": "^3.3.4",
     "chalk": "^5.3.0",
     "conventional-changelog-cli": "^2.2.2",
-    "cypress": "^12.17.4",
+    "cypress": "^13.3.2",
     "cypress-plugin-tab": "^1.0.5",
     "focus-trap": "^7.5.4",
     "lint-staged": "^13.3.0",
