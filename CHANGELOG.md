@@ -1,3 +1,9 @@
+## [4.0.3](https://github.com/posva/focus-trap-vue/compare/v4.0.2...v4.0.3) (2023-10-20)
+
+### Bug Fixes
+
+- `preventScroll` property through to `createFocusTrap`. ([#507](https://github.com/posva/focus-trap-vue/issues/507)) ([e04a40d](https://github.com/posva/focus-trap-vue/commit/e04a40d34341bdfcdc5114b6a112efe584779e6f))
+
 ## [4.0.2](https://github.com/posva/focus-trap-vue/compare/v4.0.1...v4.0.2) (2023-02-26)
 
 ### Bug Fixes
