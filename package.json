@@ -57,24 +57,24 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.4",
     "@rollup/plugin-terser": "^0.4.4",
-    "@size-limit/preset-small-lib": "^8.2.6",
+    "@size-limit/preset-small-lib": "^9.0.0",
     "@vitejs/plugin-vue": "^4.4.0",
-    "@vue/compiler-sfc": "^3.3.4",
+    "@vue/compiler-sfc": "^3.3.5",
     "chalk": "^5.3.0",
     "conventional-changelog-cli": "^2.2.2",
-    "cypress": "^12.17.4",
+    "cypress": "^13.3.2",
     "cypress-plugin-tab": "^1.0.5",
     "focus-trap": "^7.5.4",
-    "lint-staged": "^13.3.0",
+    "lint-staged": "^15.0.2",
     "prettier": "^2.8.8",
-    "rollup": "^3.29.4",
+    "rollup": "^4.1.4",
     "rollup-plugin-typescript2": "^0.36.0",
     "scule": "^1.0.0",
-    "size-limit": "^8.2.6",
+    "size-limit": "^9.0.0",
     "start-server-and-test": "^2.0.1",
     "typescript": "^5.2.2",
-    "vite": "^4.4.11",
-    "vue": "^3.3.4",
+    "vite": "^4.5.0",
+    "vue": "^3.3.5",
     "yorkie": "^2.0.0"
   },
   "gitHooks": {
@@ -105,6 +105,5 @@
   "peerDependencies": {
     "focus-trap": "^7.0.0",
     "vue": "^3.0.0"
-  },
-  "dependencies": {}
+  }
 }
