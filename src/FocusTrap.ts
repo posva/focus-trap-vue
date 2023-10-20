@@ -126,6 +126,7 @@ export const FocusTrap = defineComponent({
         fallbackFocus: props.fallbackFocus,
         tabbableOptions: props.tabbableOptions,
         delayInitialFocus: props.delayInitialFocus,
+        preventScroll: props.preventScroll,
       }))
     }
 
