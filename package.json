@@ -59,7 +59,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@size-limit/preset-small-lib": "^9.0.0",
     "@vitejs/plugin-vue": "^4.4.0",
-    "@vue/compiler-sfc": "^3.3.5",
+    "@vue/compiler-sfc": "^3.3.6",
     "chalk": "^5.3.0",
     "conventional-changelog-cli": "^2.2.2",
     "cypress": "^13.3.2",
@@ -74,7 +74,7 @@
     "start-server-and-test": "^2.0.1",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
-    "vue": "^3.3.5",
+    "vue": "^3.3.6",
     "yorkie": "^2.0.0"
   },
   "gitHooks": {
