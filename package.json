@@ -62,7 +62,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/compiler-sfc": "^3.4.26",
     "chalk": "^5.3.0",
-    "conventional-changelog-cli": "^4.1.0",
+    "conventional-changelog-cli": "^5.0.0",
     "cypress": "^13.8.1",
     "cypress-plugin-tab": "^1.0.5",
     "focus-trap": "^7.5.4",
