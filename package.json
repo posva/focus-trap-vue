@@ -1,7 +1,7 @@
 {
   "name": "focus-trap-vue",
   "version": "4.0.3",
-  "packageManager": "pnpm@9.2.0",
+  "packageManager": "pnpm@9.3.0",
   "description": "Vue component to trap the focus within a DOM element",
   "main": "dist/focus-trap-vue.cjs.js",
   "browser": "dist/focus-trap-vue.esm-browser.js",
@@ -60,13 +60,13 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@size-limit/preset-small-lib": "^11.1.4",
     "@vitejs/plugin-vue": "^5.0.5",
-    "@vue/compiler-sfc": "^3.4.27",
+    "@vue/compiler-sfc": "^3.4.29",
     "chalk": "^5.3.0",
     "conventional-changelog-cli": "^5.0.0",
     "cypress": "^13.11.0",
     "cypress-plugin-tab": "^1.0.5",
     "focus-trap": "^7.5.4",
-    "lint-staged": "^15.2.5",
+    "lint-staged": "^15.2.7",
     "prettier": "^2.8.8",
     "rollup": "^4.18.0",
     "rollup-plugin-typescript2": "^0.36.0",
@@ -75,8 +75,8 @@
     "size-limit": "^11.1.4",
     "start-server-and-test": "^2.0.4",
     "typescript": "^5.4.5",
-    "vite": "^5.2.13",
-    "vue": "^3.4.27"
+    "vite": "^5.3.1",
+    "vue": "^3.4.29"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",
