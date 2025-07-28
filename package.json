@@ -106,5 +106,12 @@
   "peerDependencies": {
     "focus-trap": "^7.0.0",
     "vue": "^3.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "cypress",
+      "esbuild",
+      "simple-git-hooks"
+    ]
   }
 }
