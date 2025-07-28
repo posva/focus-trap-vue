@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: lts/*
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
 
       - name: 'Install packages'
         run: pnpm install
@@ -29,7 +29,7 @@ jobs:
       - name: Cypress PNPM Patch
         run: cp pnpm-lock.yaml package-lock.json
 
-      - uses: cypress-io/github-action@v4
+      - uses: cypress-io/github-action@v6
         with:
           # env: PORT=4000
           build: pnpm run build
