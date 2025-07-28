@@ -16,7 +16,7 @@ import { createFocusTrap, FocusTrap as FocusTrapI, Options } from 'focus-trap'
 function defineFocusTrapProps<
   T extends {
     [K in keyof Options]: Prop<Options[K]>
-  }
+  },
 >(props: T): T {
   return props
 }
