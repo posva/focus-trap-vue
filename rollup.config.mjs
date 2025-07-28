@@ -6,7 +6,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import { pascalCase } from 'scule'
 import chalk from 'chalk'
 import terser from '@rollup/plugin-terser'
-import pkg from './package.json' assert { type: 'json' }
+import pkg from './package.json' with { type: 'json' }
 import { fileURLToPath } from 'url'
 
 // FIXME: remove after https://github.com/rollup/plugins/pull/1374 is merged
