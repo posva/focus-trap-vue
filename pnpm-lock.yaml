@@ -31,7 +31,7 @@ importers:
         version: 11.2.0(size-limit@11.2.0)
       '@vitejs/plugin-vue':
         specifier: ^6.0.1
-        version: 6.0.1(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.8.0))(vue@3.5.18(typescript@5.9.2))
+        version: 6.0.1(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.8.1))(vue@3.5.18(typescript@5.9.2))
       '@vue/compiler-sfc':
         specifier: ^3.5.18
         version: 3.5.18
@@ -42,8 +42,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(conventional-commits-filter@4.0.0)
       cypress:
-        specifier: ^14.5.3
-        version: 14.5.3
+        specifier: ^14.5.4
+        version: 14.5.4
       cypress-plugin-tab:
         specifier: ^1.0.5
         version: 1.0.5
@@ -51,8 +51,8 @@ importers:
         specifier: ^7.6.5
         version: 7.6.5
       lint-staged:
-        specifier: ^16.1.4
-        version: 16.1.4
+        specifier: ^16.1.5
+        version: 16.1.5
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -79,7 +79,7 @@ importers:
         version: 5.9.2
       vite:
         specifier: ^6.3.5
-        version: 6.3.5(@types/node@24.1.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.8.0)
+        version: 6.3.5(@types/node@24.1.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.8.1)
       vue:
         specifier: ^3.5.18
         version: 3.5.18(typescript@5.9.2)
@@ -946,8 +946,8 @@ packages:
   cypress-plugin-tab@1.0.5:
     resolution: {integrity: sha512-QtTJcifOVwwbeMP3hsOzQOKf3EqKsLyjtg9ZAGlYDntrCRXrsQhe4ZQGIthRMRLKpnP6/tTk6G0gJ2sZUfRliQ==}
 
-  cypress@14.5.3:
-    resolution: {integrity: sha512-syLwKjDeMg77FRRx68bytLdlqHXDT4yBVh0/PPkcgesChYDjUZbwxLqMXuryYKzAyJsPsQHUDW1YU74/IYEUIA==}
+  cypress@14.5.4:
+    resolution: {integrity: sha512-0Dhm4qc9VatOcI1GiFGVt8osgpPdqJLHzRwcAB5MSD/CAAts3oybvPUPawHyvJZUd8osADqZe/xzMsZ8sDTjXw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
@@ -1368,8 +1368,8 @@ packages:
     resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
     engines: {node: '>=14'}
 
-  lint-staged@16.1.4:
-    resolution: {integrity: sha512-xy7rnzQrhTVGKMpv6+bmIA3C0yET31x8OhKBYfvGo0/byeZ6E0BjGARrir3Kg/RhhYHutpsi01+2J5IpfVoueA==}
+  lint-staged@16.1.5:
+    resolution: {integrity: sha512-uAeQQwByI6dfV7wpt/gVqg+jAPaSp8WwOA8kKC/dv1qw14oGpnpAisY65ibGHUGDUv0rYaZ8CAJZ/1U8hUvC2A==}
     engines: {node: '>=20.17'}
     hasBin: true
 
@@ -2048,8 +2048,8 @@ packages:
   yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
-  yaml@2.8.0:
-    resolution: {integrity: sha512-4lLa/EcQCB0cJkyts+FpIRx5G/llPxfP6VQU5KByHEhLxY3IJCH0f0Hy1MHI8sClTvsIb8qwRJ6R/ZdlDJ/leQ==}
+  yaml@2.8.1:
+    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
     engines: {node: '>= 14.6'}
     hasBin: true
 
@@ -2466,10 +2466,10 @@ snapshots:
       '@types/node': 24.1.0
     optional: true
 
-  '@vitejs/plugin-vue@6.0.1(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.8.0))(vue@3.5.18(typescript@5.9.2))':
+  '@vitejs/plugin-vue@6.0.1(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.8.1))(vue@3.5.18(typescript@5.9.2))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.29
-      vite: 6.3.5(@types/node@24.1.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.8.0)
+      vite: 6.3.5(@types/node@24.1.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.8.1)
       vue: 3.5.18(typescript@5.9.2)
 
   '@vue/compiler-core@3.5.18':
@@ -2843,7 +2843,7 @@ snapshots:
     dependencies:
       ally.js: 1.4.1
 
-  cypress@14.5.3:
+  cypress@14.5.4:
     dependencies:
       '@cypress/request': 3.0.9
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
@@ -3316,7 +3316,7 @@ snapshots:
 
   lilconfig@3.1.3: {}
 
-  lint-staged@16.1.4:
+  lint-staged@16.1.5:
     dependencies:
       chalk: 5.5.0
       commander: 14.0.0
@@ -3327,7 +3327,7 @@ snapshots:
       nano-spawn: 1.0.2
       pidtree: 0.6.0
       string-argv: 0.3.2
-      yaml: 2.8.0
+      yaml: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -3922,7 +3922,7 @@ snapshots:
       core-util-is: 1.0.2
       extsprintf: 1.3.0
 
-  vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.8.0):
+  vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.8.1):
     dependencies:
       esbuild: 0.25.0
       fdir: 6.4.6(picomatch@4.0.2)
@@ -3935,7 +3935,7 @@ snapshots:
       fsevents: 2.3.3
       jiti: 2.4.2
       terser: 5.17.4
-      yaml: 2.8.0
+      yaml: 2.8.1
 
   vue@3.5.18(typescript@5.9.2):
     dependencies:
@@ -3985,7 +3985,7 @@ snapshots:
 
   yallist@4.0.0: {}
 
-  yaml@2.8.0: {}
+  yaml@2.8.1: {}
 
   yauzl@2.10.0:
     dependencies:
