@@ -66,6 +66,7 @@ const FocusTrapProps = defineFocusTrapProps({
 })
 
 export const FocusTrap = defineComponent({
+  name: 'FocusTrap',
   props: Object.assign(
     {
       active: {
