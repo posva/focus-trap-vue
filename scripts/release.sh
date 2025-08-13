@@ -30,7 +30,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
   # commit
   # use --tag to publish to a different tag
-  pnpm publish --tag latest --new-version "$VERSION" --no-commit-hooks --no-git-tag-version
+  pnpm publish --tag latest --no-git-checks
 
   # publish
   git push origin refs/tags/v$VERSION
