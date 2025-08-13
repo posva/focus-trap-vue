@@ -1,3 +1,9 @@
+# [4.1.0](https://github.com/posva/focus-trap-vue/compare/v4.0.3...v4.1.0) (2025-08-13)
+
+### Features
+
+- add component name ([#599](https://github.com/posva/focus-trap-vue/issues/599)) ([46ce689](https://github.com/posva/focus-trap-vue/commit/46ce689c28dc2e574efba96ac378e893efa8d9dd))
+
 ## [4.0.3](https://github.com/posva/focus-trap-vue/compare/v4.0.2...v4.0.3) (2023-10-20)
 
 ### Bug Fixes
