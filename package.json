@@ -1,7 +1,7 @@
 {
   "name": "focus-trap-vue",
   "version": "4.1.0",
-  "packageManager": "pnpm@10.19.0",
+  "packageManager": "pnpm@10.20.0",
   "description": "Vue component to trap the focus within a DOM element",
   "main": "dist/focus-trap-vue.cjs.js",
   "browser": "dist/focus-trap-vue.esm-browser.js",
@@ -56,7 +56,7 @@
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-commonjs": "^28.0.9",
     "@rollup/plugin-node-resolve": "^16.0.3",
-    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-replace": "^6.0.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@size-limit/preset-small-lib": "^11.2.0",
     "@vitejs/plugin-vue": "^6.0.1",
