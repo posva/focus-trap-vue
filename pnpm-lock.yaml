@@ -48,8 +48,8 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5
       focus-trap:
-        specifier: ^7.7.0
-        version: 7.7.0
+        specifier: ^7.7.1
+        version: 7.7.1
       lint-staged:
         specifier: ^16.2.7
         version: 16.2.7
@@ -1305,8 +1305,8 @@ packages:
     resolution: {integrity: sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw==}
     engines: {node: '>=8'}
 
-  focus-trap@7.7.0:
-    resolution: {integrity: sha512-DJJDHpEgoSbP8ZE1MNeU2IzCpfFyFdNZZRilqmfH2XiQsPK6PtD8AfJqWzEBudUQB2yHwZc5iq54rjTaGQ+ljw==}
+  focus-trap@7.7.1:
+    resolution: {integrity: sha512-Pkp8m55GjxBLnhBoT6OXdMvfRr4TjMAKLvFM566zlIryq5plbhaTmLAJWTGR0EkRwLjEte1lCOG9MxF1ipJrOg==}
 
   follow-redirects@1.15.9:
     resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
@@ -2033,8 +2033,8 @@ packages:
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
 
-  tabbable@6.3.0:
-    resolution: {integrity: sha512-EIHvdY5bPLuWForiR/AN2Bxngzpuwn1is4asboytXtpTgsArc+WmSJKVLlhdh71u7jFcryDqB2A8lQvj78MkyQ==}
+  tabbable@6.4.0:
+    resolution: {integrity: sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg==}
 
   temp-dir@3.0.0:
     resolution: {integrity: sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw==}
@@ -3390,9 +3390,9 @@ snapshots:
       locate-path: 5.0.0
       path-exists: 4.0.0
 
-  focus-trap@7.7.0:
+  focus-trap@7.7.1:
     dependencies:
-      tabbable: 6.3.0
+      tabbable: 6.4.0
 
   follow-redirects@1.15.9(debug@4.4.3):
     optionalDependencies:
@@ -4126,7 +4126,7 @@ snapshots:
 
   systeminformation@5.27.14: {}
 
-  tabbable@6.3.0: {}
+  tabbable@6.4.0: {}
 
   temp-dir@3.0.0: {}
 
