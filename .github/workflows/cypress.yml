@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: lts/*
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v5
 
       - name: 'Install packages'
         run: pnpm install
