@@ -75,7 +75,7 @@
     "size-limit": "^12.1.0",
     "start-server-and-test": "^3.0.5",
     "typescript": "^5.9.3",
-    "vite": "^8.0.13",
+    "vite": "^8.0.14",
     "vue": "^3.5.34"
   },
   "simple-git-hooks": {
