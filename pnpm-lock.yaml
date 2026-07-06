@@ -31,7 +31,7 @@ importers:
         version: 12.1.0(size-limit@12.1.0(jiti@2.4.2))
       '@vitejs/plugin-vue':
         specifier: ^6.0.7
-        version: 6.0.7(vite@8.1.0(@types/node@24.1.0)(esbuild@0.28.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.9.0))(vue@3.5.39(typescript@5.9.3))
+        version: 6.0.7(vite@8.1.3(@types/node@24.1.0)(esbuild@0.28.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.9.0))(vue@3.5.39(typescript@5.9.3))
       '@vue/compiler-sfc':
         specifier: ^3.5.39
         version: 3.5.39
@@ -54,8 +54,8 @@ importers:
         specifier: ^17.0.8
         version: 17.0.8
       prettier:
-        specifier: ^3.9.1
-        version: 3.9.1
+        specifier: ^3.9.4
+        version: 3.9.4
       rollup:
         specifier: ^4.62.2
         version: 4.62.2
@@ -78,8 +78,8 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       vite:
-        specifier: ^8.1.0
-        version: 8.1.0(@types/node@24.1.0)(esbuild@0.28.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.9.0)
+        specifier: ^8.1.3
+        version: 8.1.3(@types/node@24.1.0)(esbuild@0.28.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.9.0)
       vue:
         specifier: ^3.5.39
         version: 3.5.39(typescript@5.9.3)
@@ -1713,8 +1713,12 @@ packages:
     resolution: {integrity: sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier@3.9.1:
-    resolution: {integrity: sha512-ppiDo2CSwexck1eyZUwJHg/N3nf1+6IRCv7W/VJ5vaLnVCmB7+3CdRfMwoCHBBX6xTrREDTksZ4OZl5SSf4zXA==}
+  postcss@8.5.16:
+    resolution: {integrity: sha512-vuwillviilfKZsg0VGj5R/YwwcHx4SLsIOI/7K6mQkWx+l5cUHTjj5g0AasTBcyXsbfTgrwsUNmVUb5xVwyPwg==}
+    engines: {node: ^10 || ^12 || >=14}
+
+  prettier@3.9.4:
+    resolution: {integrity: sha512-yWG/o/4oJfo036EKAfK6ACAoDOfHeRHx4tuxkfBZiauURiaSmYwlpOr5LQqKtIkRD2z1PLteme2WoxEnj4tHTg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2056,8 +2060,8 @@ packages:
     resolution: {integrity: sha512-ZZKSmDAEFOijERBLkmYfJ+vmk3w+7hOLYDNkRCuRuMJGEmqYNCNLyBBFwWKVMhfwaEF3WOd0Zlw86U/WC/+nYw==}
     engines: {'0': node >=0.6.0}
 
-  vite@8.1.0:
-    resolution: {integrity: sha512-BuJcQK/56NQTWDGn4ABea3q4SSBdNPWwNZKTkkUpcMPnLoquSYH8llRtSUIgoL1KSCpHt5eghLShn50mH36y7Q==}
+  vite@8.1.3:
+    resolution: {integrity: sha512-Ds+gBRbj0lwRO2Y5hwnUBdxSwlAve9LeRyU4sNnAr0ewW0gWF0n5bgXgUzbgZ49MV9BVUAQUFYVcDUcilUExMA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -2644,10 +2648,10 @@ snapshots:
 
   '@types/tmp@0.2.6': {}
 
-  '@vitejs/plugin-vue@6.0.7(vite@8.1.0(@types/node@24.1.0)(esbuild@0.28.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.9.0))(vue@3.5.39(typescript@5.9.3))':
+  '@vitejs/plugin-vue@6.0.7(vite@8.1.3(@types/node@24.1.0)(esbuild@0.28.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.9.0))(vue@3.5.39(typescript@5.9.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 8.1.0(@types/node@24.1.0)(esbuild@0.28.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.9.0)
+      vite: 8.1.3(@types/node@24.1.0)(esbuild@0.28.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.9.0)
       vue: 3.5.39(typescript@5.9.3)
 
   '@vue/compiler-core@3.5.39':
@@ -3613,7 +3617,13 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier@3.9.1: {}
+  postcss@8.5.16:
+    dependencies:
+      nanoid: 3.3.12
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
+
+  prettier@3.9.4: {}
 
   pretty-bytes@5.6.0: {}
 
@@ -3983,11 +3993,11 @@ snapshots:
       core-util-is: 1.0.2
       extsprintf: 1.3.0
 
-  vite@8.1.0(@types/node@24.1.0)(esbuild@0.28.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.9.0):
+  vite@8.1.3(@types/node@24.1.0)(esbuild@0.28.0)(jiti@2.4.2)(terser@5.17.4)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
-      postcss: 8.5.15
+      postcss: 8.5.16
       rolldown: 1.1.3
       tinyglobby: 0.2.17
     optionalDependencies:
