@@ -60,10 +60,10 @@
     "@rollup/plugin-terser": "^1.0.0",
     "@size-limit/preset-small-lib": "^13.0.3",
     "@vitejs/plugin-vue": "^6.0.8",
-    "@vue/compiler-sfc": "^3.5.40",
+    "@vue/compiler-sfc": "^3.5.41",
     "chalk": "^6.0.0",
     "conventional-changelog-cli": "^5.0.0",
-    "cypress": "^15.19.0",
+    "cypress": "^15.20.0",
     "cypress-plugin-tab": "^2.0.0",
     "focus-trap": "^8.2.2",
     "lint-staged": "^17.3.0",
@@ -75,8 +75,8 @@
     "size-limit": "^13.0.3",
     "start-server-and-test": "^3.0.12",
     "typescript": "^5.9.3",
-    "vite": "^8.2.0",
-    "vue": "^3.5.40"
+    "vite": "^8.2.1",
+    "vue": "^3.5.41"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",
