@@ -42,11 +42,11 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(conventional-commits-filter@4.0.0)
       cypress:
-        specifier: ^15.20.0
-        version: 15.20.0
+        specifier: ^15.20.1
+        version: 15.20.1
       cypress-plugin-tab:
         specifier: ^2.0.0
-        version: 2.0.0(cypress@15.20.0)
+        version: 2.0.0(cypress@15.20.1)
       focus-trap:
         specifier: ^8.2.2
         version: 8.2.2
@@ -1086,8 +1086,8 @@ packages:
     peerDependencies:
       cypress: '>=10'
 
-  cypress@15.20.0:
-    resolution: {integrity: sha512-yrt6z9YERlggq5FReDx+PkbjrNoEQPeM03MQC1GvLlFGItk8ervC0A/7fjzWoWVRRXjsem+Pj3cunknARl/37g==}
+  cypress@15.20.1:
+    resolution: {integrity: sha512-7GV3O7vQQG+EVVv9BGs6lCHY49x25jVi/z1+zdjuuq/o3eZeDwmGPJpRYnOWeGvQxTCtkydXWHBPhV8xuGXPLg==}
     engines: {node: ^20.1.0 || ^22.0.0 || >=24.0.0}
     hasBin: true
 
@@ -2993,11 +2993,11 @@ snapshots:
 
   csstype@3.2.3: {}
 
-  cypress-plugin-tab@2.0.0(cypress@15.20.0):
+  cypress-plugin-tab@2.0.0(cypress@15.20.1):
     dependencies:
-      cypress: 15.20.0
+      cypress: 15.20.1
 
-  cypress@15.20.0:
+  cypress@15.20.1:
     dependencies:
       '@cypress/request': 4.0.0
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
